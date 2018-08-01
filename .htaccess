@@ -1,0 +1,2 @@
+ErrorDocument 404 /404.php
+Header set Cache-Control "max-age=3600, public, must-revalidate"

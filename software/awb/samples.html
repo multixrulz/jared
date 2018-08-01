@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Samples</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="copyright" href="/copyright.html">
+<meta name="description" content="">
+<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>AsciiDoc Website Builder</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/photos" title="Photos and photography">Photos</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li>
+<a href="../../index.html">Jared Henley</a>
+</li>
+<li>
+<a href="../index.html">Software</a>
+</li>
+<li>
+<a href="index.html">AsciiDoc Website Builder</a>
+</li>
+<li>
+Samples
+</li>
+</ul>
+    </div>
+    <div id="content">
+<div id="awb">
+    <div id="awbnav">
+        <link rel="stylesheet" type="text/css" href="/software/awb/css/layout.css">
+        <center><img src="/software/awb/img/awblogo.png" alt="awb logo"></center>
+<ul>
+<li>
+<a href="/software/awb/index.html">awb Home</a>
+</li>
+<li>
+<a href="/software/awb/about.html">About awb</a>
+</li>
+<li>
+<a href="/software/awb/features.html">Features</a>
+</li>
+<li>
+<a href="/software/awb/download">Downoads</a>
+</li>
+<li>
+<a href="/software/awb/news">Releases and news</a>
+</li>
+<li>
+<a href="/software/awb/doc/index.html">Documentation</a>
+<ul>
+<li>
+<a href="/software/awb/doc/global.html">Global Configuration</a>
+</li>
+<li>
+<a href="/software/awb/doc/awbdir.html">Directory Configuration</a>
+</li>
+<li>
+<a href="/software/awb/doc/dirtypes.html">Directory Types</a>
+</li>
+<li>
+<a href="/software/awb/doc/templates.html">Templates</a>
+</li>
+<li>
+<a href="/software/awb/doc/commands.html">Commands</a>
+</li>
+<li>
+<a href="/software/awb/doc/other.html">Other Features</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/software/awb/samples.html">Samples</a>
+</li>
+</ul>
+    </div>
+    <div id="awbcontent">
+<h1>Samples</h1>
+<p><strong>The samples have been removed for the moment, but they&#8217;ll be back eventually.</strong></p>
+<h2>Using Samples</h2>
+<p>These instructions assume that you have awb installed, but have never used it and don&#8217;t know what you&#8217;re doing.</p>
+<ol type="1">
+<li>
+Unpack the sample archive to an awb source directory, such as
+<div class="listingblock">
+<pre><code>/home/user/awb-sample/src</code></pre>
+</div>
+</li>
+<li>
+Create a text file <code>/home/user/.config/awb/awb.conf</code> with the following content:
+<div class="listingblock">
+<pre><code>[sample]
+siteroot: /home/user/awb-sample
+baseurl: http://example.com
+asciidoc options: -d book -b html4
+tidy: true</code></pre>
+</div>
+</li>
+<li>
+Make any changes to your awb.conf file as required by the sample.
+</li>
+<li>
+Create the directory <code>/home/user/awb-sample/html</code>
+</li>
+<li>
+Open a terminal window and run
+<div class="listingblock">
+<pre><code>awb sample</code></pre>
+</div>
+</li>
+<li>
+Take a look at the output in <code>/home/user/awb-sample/html</code>
+</li>
+<li>
+Start editing the source files and see what happens.  In addition to the <a href="http://www.methods.co.nz/asciidoc/userguide.html">AsciiDoc user guide</a>, you may find this <a href="http://powerman.name/doc/asciidoc">cheatsheet</a> handy.
+</li>
+</ol>
+<h2>awb website</h2>
+<p>Here is the awb website source as the first example.  The asciidoc options specified in awb.conf are:</p>
+<div class="listingblock">
+<pre><code>asciidoc options: -b html4 -d book -a icons -f /home/user/awb-sample/src/html4.conf</code></pre>
+</div>
+<p><a href="awb-website.tar.bz2">Download as .tar.bz2</a></p>
+    </div>
+</div>
+    </div>
+    <div id="foot">
+
+    <!-- Google CSE Search Box Begins  -->
+    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
+    <b>Search:</b>
+    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="text" name="q" size="30">
+    <input type="submit" name="sa" value="Search" class="button">
+    </form>
+    <!-- Google CSE Search Box Ends -->
+<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
+<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
+<p><em>Last updated Tuesday, June 30, 2015</em></p>
+</div>
+</div>
+</body>
+</html>

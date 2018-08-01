@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>bufe</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="copyright" href="/copyright.html">
+<meta name="description" content="bufe makes it easy to run backups">
+<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>bufe</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/photos" title="Photos and photography">Photos</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li>
+<a href="../../index.html">Jared Henley</a>
+</li>
+<li>
+<a href="../index.html">Software</a>
+</li>
+<li>
+bufe
+</li>
+</ul>
+    </div>
+    <div id="content">
+<h1>bufe</h1>
+<p>bufe is a program that lets you specify a few parameters for a backup and then run it easily.  It supports mirrors using rsync, incremental backups using rdup, and a disk-based incremental backup that uses rync&#8217;s hard-linking feature.</p>
+<p>Bufe is a major reason that my data is backed up&#8201;&#8212;&#8201;it&#8217;s so easy to use on a day-to-day basis that the job actually gets done.</p>
+<p><a href="download/bufe-20140406.tar.bz2"><img class="icon" src="/img/icons/download.png" alt="Download bufe" title="Download bufe" /></a> Download current</p>
+<h2>Dependencies</h2>
+<ul>
+<li>
+rsync
+</li>
+<li>
+rdup
+</li>
+<li>
+cdrkit (for dirsplit)
+</li>
+<li>
+tar
+</li>
+</ul>
+<h2>Usage</h2>
+<div class="listingblock">
+<pre><code>Usage: bufe {-l | backup_name}</code></pre>
+</div>
+<p><code>bufe -l</code> lists all the backups defined in ~/.config/bufe/bufe.conf.</p>
+<p><code>bufe backup_name</code> runs the named backup defined in ~/.config/bufe/bufe.conf.</p>
+<div class="listingblock">
+<pre><code>[rsync_backup]
+type = mirror
+source = /path/to/original/
+destination = /path/to/mirror
+preserve = True</code></pre>
+</div>
+<p>A mirror backup runs rsync to mirror the source directory to the destination directory.  Normal rsync rules about trailing slashes apply.  Preserve passes the <em>a</em> option to rsync.  If preserve is false, options <em>rltD</em> are passed to rsync instead.</p>
+<div class="listingblock">
+<pre><code>[rdup_backup]
+type = incremental
+source = /path/to/original
+destination = /path/to/backup
+tmp = /tmpdir
+splitsize = 600M</code></pre>
+</div>
+<p>An incremental backup uses rdup to back up only modified files (based on ctime).  The files are split using dirsplit into equal-sized groups if possible, which are then tarred.</p>
+<h2>Give back</h2>
+<p>If you find this program useful, <a href="/software/giveback.html">give something back</a>.</p>
+    </div>
+    <div id="foot">
+
+    <!-- Google CSE Search Box Begins  -->
+    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
+    <b>Search:</b>
+    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="text" name="q" size="30">
+    <input type="submit" name="sa" value="Search" class="button">
+    </form>
+    <!-- Google CSE Search Box Ends -->
+<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
+<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
+<p><em>Last updated Wednesday, February 17, 2016</em></p>
+</div>
+</div>
+</body>
+</html>

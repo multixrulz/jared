@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>AWB releases and news</title>
+<id>http://jared.henley.id.au/software/awb/news/atom.xml</id>
+<updated>2015-06-27T14:00:00Z</updated>
+<entry>
+<link href="http://jared.henley.id.au/software/awb/news/2015/0628.html"/>
+<title>awb is moving off SourceForge</title>
+<summary>None</summary>
+<updated>2015-06-27T14:00:00Z</updated>
+</entry>
+</feed>

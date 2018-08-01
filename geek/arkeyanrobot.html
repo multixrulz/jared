@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Static Arkeyan Robot</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="copyright" href="/copyright.html">
+<meta name="description" content="">
+<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>Geeky Stuff</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/photos" title="Photos and photography">Photos</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li>
+<a href="../index.html">Jared Henley</a>
+</li>
+<li>
+<a href="index.html">Geeky Stuff</a>
+</li>
+<li>
+Static Arkeyan Robot
+</li>
+</ul>
+    </div>
+    <div id="content">
+<h1>Static Arkeyan Robot</h1>
+<p>I&#8217;ve been building a robot with my boy for quite some time.  It doesn&#8217;t move, but it does have awesome eyes!  The eyes glow from inside the robot.</p>
+<p class="centre">
+  <img class="photo" src="img/arkeyanrobot/robot.jpg" alt="Arkeyan Robot" title="Arkeyan Robot" />
+</p>
+<p>The robot is built from sheet metal rescued from old vegetable oil tins, with copper cable for arms and legs and a polystyrene foam head.  The eyes were made hollow, with paper glued on behind, an RGB LED behind each eye, and then a layer of alfoil to guide all of the light out through the eyes.</p>
+<p>I&#8217;ve used an Arduino Uno to drive the LEDs.  However, the arduino is programmed in C rather than Arduino language.  I gave up on the Arduino environment when gnoduino disappeared from the archlinux repo, and I discovered that it&#8217;s not really much harder to code it in C.  (It also avoids the hassles of programming around the limitations of the Arduino language.)  You also get to do exactly what you want.</p>
+<p>There are three inputs, one for each colour.   Each input should be connected to a momentary pushbutton connected to ground&#8201;&#8212;&#8201;such as a pair of wires floating around, in true Maker style.  Activating an input fades one of the colours smoothly in or out.  It looks pretty cool.</p>
+<p>So without further delay, the code:</p>
+<div class="listingblock">
+<pre><code>/*
+ * Robot lights
+ *
+ * Controls the eye LEDs on Joshua's Arkeyan Robot
+ *
+ * This program copyright (C) 2015 Joshua &amp; Jared Henley, shared GPLv3
+ * Basically, you can copy it around and change it all you like as long as you
+ * share under the same terms.
+ */
+
+#include &lt;avr/io.h&gt;
+#include &lt;avr/interrupt.h&gt;
+
+
+// Tells us if a colour is to be brightened or darkened.
+#define RED_UP 0b00000001 // bit 0 = Red UP
+#define RED_DN 0b00000010 // bit 1 = Red DOWN
+#define GRN_UP 0b00000100 // bit 2 = Green UP
+#define GRN_DN 0b00001000 // bit 3 = Green DOWN
+#define BLU_UP 0b00010000 // bit 4 = Blue UP
+#define BLU_DN 0b00100000 // bit 5 = Blue DOWN
+#define LED_ON 0x00
+#define LED_OFF 0xff
+uint8_t ramps = 0;
+
+/* Set up an interrupt-driven clock to time the ramp-up/ramp-downs */
+
+volatile uint16_t ticks;
+
+void clock_setup() {
+    // Leave the prescaler alone
+    TCCR0B = _BV(WGM02) | _BV(CS00); // Configure timer 0 for CTC mode, no prescaler
+    TIMSK0 |= _BV(OCIE0A); // Enable CTC interrupt
+    OCR0A = 255; // Set CTC compare value
+}
+
+// Get the current "time".
+uint16_t clock_now() {
+    return ticks;
+}
+
+// Determine elapsed time.  Acounts for a single overflow.
+uint16_t clock_elapsed(uint16_t begin) {
+    if (ticks &lt; begin)
+        return ticks + (65535 - begin);
+    else
+        return ticks - begin;
+}
+
+ISR(TIMER0_COMPA_vect, ISR_BLOCK) {
+    ticks++;
+}
+
+uint16_t start_time;
+
+void pwm_setup() {
+    // Set up timers 1 and 2 in Fast 8-bit PWM mode, no prescaler
+    // Timer 1
+    TCCR1A = _BV(COM1A1) | _BV(COM1B1) | _BV(WGM10);
+    TCCR1B = _BV(WGM12) | _BV(CS10);
+    OCR1A = LED_OFF; // Set compare value -- Red LED -- off
+    OCR1B = LED_OFF; // Set compare value -- Green LED -- off
+    // Timer 2
+    TCCR2A = _BV(COM2A1) | _BV(WGM20);
+    TCCR2B = _BV(WGM21) | _BV(CS20);
+    OCR2A = LED_OFF; // Set compare value -- Blue LED -- off
+}
+
+void setup() {
+    // Set up output pins
+    DDRB = 0;
+    DDRB |= _BV(PB1); // Red pin is output
+    DDRB |= _BV(PB2); // Green pin is output
+    DDRB |= _BV(PB3); // Blue pin is output
+    // Enable internal pull-ups on inputs
+    PORTD = _BV(PD2) |  _BV(PD3) | _BV(PD4);
+    clock_setup();
+    pwm_setup();
+    start_time = clock_now();
+    sei(); // Enable the global interrupt flag
+}
+
+void loop() {
+    // Read input pins
+    if (!(PIND &amp; _BV(PD2))) { // Red Pin
+        if (OCR1A == LED_OFF) {
+            // LED is off, ramp it on
+            ramps |= RED_UP;
+        }
+        if (OCR1A == LED_ON) {
+            // LED is on, ramp it off
+            ramps |= RED_DN;
+        }
+    }
+    if (!(PIND &amp; _BV(PD3))) { // Green Pin
+        if (OCR1B == LED_OFF) {
+            // LED is off, ramp it on
+            ramps |= GRN_UP;
+        }
+        if (OCR1B == LED_ON) {
+            // LED is on, ramp it off
+            ramps |= GRN_DN;
+        }
+    }
+    if (!(PIND &amp; _BV(PD4))) { // Blue Pin
+        if (OCR2A == LED_OFF) {
+            // LED is off, ramp it on
+            ramps |= BLU_UP;
+        }
+        if (OCR2A == LED_ON) {
+            // LED is on, ramp it off
+            ramps |= BLU_DN;
+        }
+    }
+    if (clock_elapsed(start_time) &gt;= 800) {
+        // Alter PWM outputs
+        if (ramps &amp; RED_UP) {
+            // Red UP
+            OCR1A--;
+            if (OCR1A == LED_ON) {
+                ramps &amp;= ~(RED_UP | RED_DN);
+            }
+        }
+        if (ramps &amp; RED_DN) {
+            // Red DOWN
+            OCR1A++;
+            if (OCR1A == LED_OFF) {
+                ramps &amp;= ~(RED_UP | RED_DN);
+            }
+        }
+        if (ramps &amp; GRN_UP) {
+            // Green UP
+            OCR1B--;
+            if (OCR1B == LED_ON) {
+                ramps &amp;= ~(GRN_UP | GRN_DN);
+            }
+        }
+        if (ramps &amp; GRN_DN) {
+            // Green Down
+            OCR1B++;
+            if (OCR1B == LED_OFF) {
+                ramps &amp;= ~(GRN_UP | GRN_DN);
+            }
+        }
+        if (ramps &amp; BLU_UP) {
+            // Blue UP
+            OCR2A--;
+            if (OCR2A == LED_ON) {
+                ramps &amp;= ~(BLU_UP | BLU_DN);
+            }
+        }
+        if (ramps &amp; BLU_DN) {
+            // Blue DOWN
+            OCR2A++;
+            if (OCR2A == LED_OFF) {
+                ramps &amp;= ~(BLU_UP | BLU_DN);
+            }
+        }
+        start_time = clock_now();
+    }
+}
+
+int main() {
+    setup();
+    while (1) {
+        loop();
+    }
+}</code></pre>
+</div>
+<p>This code is compiled against avr-libc.  It is licenced GPLv3</p>
+    </div>
+    <div id="foot">
+
+    <!-- Google CSE Search Box Begins  -->
+    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
+    <b>Search:</b>
+    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="text" name="q" size="30">
+    <input type="submit" name="sa" value="Search" class="button">
+    </form>
+    <!-- Google CSE Search Box Ends -->
+<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
+<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
+<p><em>Last updated Sunday, June 28, 2015</em></p>
+</div>
+</div>
+</body>
+</html>

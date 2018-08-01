@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Jared's Blog</title>
+<id>http://jared.henley.id.au/blog/atom.xml</id>
+<updated>2016-12-04T13:00:00Z</updated>
+<entry>
+<link href="http://jared.henley.id.au/blog/2016/1205.html"/>
+<title>Removing gvfs</title>
+<summary>None</summary>
+<updated>2016-12-04T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2016/0427.html"/>
+<title>Disk Encryption in Linux</title>
+<summary>Setting up disk encryption in Linux</summary>
+<updated>2016-04-26T14:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2016/0316.html"/>
+<title>FreeBSD Disk Encryption</title>
+<summary>How to set up one type of disk encryption on FreeBSD.</summary>
+<updated>2016-03-15T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2016/0315.html"/>
+<title>Up close and personal with FreeBSD</title>
+<summary>My first experience setting up FreeBSD</summary>
+<updated>2016-03-14T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/1008.html"/>
+<title>Brickmaster Website</title>
+<summary>None</summary>
+<updated>2015-10-07T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0227.html"/>
+<title>Python in the Browser -- the verdict</title>
+<summary>None</summary>
+<updated>2015-02-26T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0226.html"/>
+<title>Python in the Browser: RapydScript</title>
+<summary>None</summary>
+<updated>2015-02-25T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0225.html"/>
+<title>Python in the Browser: Brython</title>
+<summary>None</summary>
+<updated>2015-02-24T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0224.html"/>
+<title>Python in the Browser: Skulpt</title>
+<summary>None</summary>
+<updated>2015-02-23T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0223.html"/>
+<title>Python in the Browser: Pyjs</title>
+<summary>None</summary>
+<updated>2015-02-22T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2015/0209.html"/>
+<title>Python in the Browser</title>
+<summary>Which option is best for developing my browser-based programs in python?</summary>
+<updated>2015-02-08T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2014/1026.html"/>
+<title>Open Source Cake Mix</title>
+<summary>None</summary>
+<updated>2014-10-25T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2014/1019.html"/>
+<title>Reprogramming the MaKey Makey</title>
+<summary>None</summary>
+<updated>2014-10-18T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2014/1006.html"/>
+<title>Lunar Eclipse, October 8, 2014</title>
+<summary>None</summary>
+<updated>2014-10-05T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2012/0619.html"/>
+<title>Making sshfs friendlier</title>
+<summary>None</summary>
+<updated>2012-06-18T14:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2011/0203.html"/>
+<title>Microsoft Outloo...</title>
+<summary>None</summary>
+<updated>2011-02-02T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2010/0601.html"/>
+<title>Removing GNOME</title>
+<summary>None</summary>
+<updated>2010-05-31T14:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2007/1205.html"/>
+<title>AWB -- Asciidoc Website Builder -- is Go!</title>
+<summary>I've built my own website building tool, so I don't have to spend so much time fussing around with this stuff.</summary>
+<updated>2007-12-04T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2007/0226.html"/>
+<title>The Ideal Job</title>
+<summary>Forget looking for the perfect, exciting, full-on passionate job.  Just find something that doesn't suck too much and pays the bills.</summary>
+<updated>2007-02-25T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2006/0717.html"/>
+<title>I'm a casualty in the Israeli-Lebanese conflict</title>
+<summary>This time my web host has been attacked by some people upset about the latest war.</summary>
+<updated>2006-07-16T14:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2006/0714.html"/>
+<title>Passion Driven</title>
+<summary>Someone got so excited by this book that they left a copy in everyone's mail box.</summary>
+<updated>2006-07-13T14:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2006/0224.html"/>
+<title>Idiot!</title>
+<summary>Words for idiots.  Why doesn English have so many of them?</summary>
+<updated>2006-02-23T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2006/0201.html"/>
+<title>Nokia service sucks</title>
+<summary>I had a fairly negative experience with Nokia: two dead phones (brand-new), and poor service.</summary>
+<updated>2006-01-31T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2006/0103.html"/>
+<title>A plug for MemoryX</title>
+<summary>I've actually had good service from a company!  Worth cheering about.</summary>
+<updated>2006-01-02T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2005/1127.html"/>
+<title>Eden's Not So Hot</title>
+<summary>We live in Eden.  That's the name of our building, but it's not quite paradise...</summary>
+<updated>2005-11-26T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2005/1116.html"/>
+<title>Chinglish!</title>
+<summary>Reading English written by people who don't know it very well is always rather funny.</summary>
+<updated>2005-11-15T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2005/1112.html"/>
+<title>Web Hosts -- Grrr</title>
+<summary>I'm unhappy with my web host: they're down.</summary>
+<updated>2005-11-11T13:00:00Z</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2005/1109.html"/>
+<title>Why does Internet Explorer suck so much?</title>
+<summary>Internet Explorer gives me all sorts of trouble.  At the moment it's related to XHTML.</summary>
+<updated>2005-11-08T13:00:00Z</updated>
+</entry>
+</feed>

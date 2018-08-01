@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scanner Camera!</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="copyright" href="/copyright.html">
+<meta name="description" content="My attempt to build a rotating camera build from the parts of a flatbed scanner.">
+<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>Geeky Stuff</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/photos" title="Photos and photography">Photos</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li>
+<a href="../index.html">Jared Henley</a>
+</li>
+<li>
+<a href="index.html">Geeky Stuff</a>
+</li>
+<li>
+Scanner Camera!
+</li>
+</ul>
+    </div>
+    <div id="content">
+<h1>Scanner Camera!</h1>
+<p>I&#8217;m one of those people that could be variously described as ingenious or cheap. So when I stumbled across a webpage that detailed an attempt at making a digital camera from a scanner, I was hooked. After a few months of talking about it, I finally decided to give it a go. This page is the story of those efforts.</p>
+<ul>
+<li>
+<a href="#_getting_the_scanner">Getting the Scanner</a>
+</li>
+<li>
+<a href="#_checking_out_the_innards">Checking out the innards</a>
+</li>
+<li>
+<a href="#_first_scans">First scans</a>
+</li>
+<li>
+<a href="#_improving_the_optics">Improving the optics</a>
+</li>
+</ul>
+<h2>Getting the Scanner</h2>
+<p class="centre">
+  <img src="img/scancam/dscn3137.jpg" alt="The Scanner" title="The Scanner" />
+</p>
+<p class="centre"><b> The Scanner</b></p>
+<p>[April 6, 2004]</p>
+<p>Being cheap (yes it&#8217;s true), I looked around for the cheapest scanner I could get my hands on - in other words, a free one. But free scanners are hard to come by, so I had to resort to buying one. Looking around one day, I found a Mustek Bearpaw 1200TA (with the cute bear&#8217;s paw buttons on the front) going for 2,199 baht at Tesco Lotus. But there was one rather second-hand-looking one, so I took it to the counter and discovered it was priced at 1,049 baht, with a 7-day return period. Cool! So of course I bought it, brought it home, and tried it out immediately.</p>
+<p>The first obstacle I encountered was getting the scanner to work with my computer.  With Windows this might have been fine, but my box is a Linux box and I hadn&#8217;t previously used a scanner with it, so I didn&#8217;t know how Linux scanning works.  &lt;Insert long story about the driver chase here.&gt;  After messing things up a few times, I need to mention here (for my own benefit) to add "afe" to the backend&#8217;s config file and add SANE_DEBUG_GT68XX=4 to the environment.</p>
+<p>It worked, sort-of &#8230; the fluorsecent tube wasn&#8217;t lighting up and the stepper motor that drives the scanning head made a terrible grinding sound when I tried to scan so I couldn&#8217;t get a picture out of it. (I began to wonder about the ethics of the original buyer.) Was this a big mistake after all?</p>
+<p class="centre">
+  <img src="img/scancam/dscn3139.jpg" alt="Voiding the warranty. What fun!" title="Voiding the warranty. What fun!" />
+</p>
+<p class="centre"><b> Voiding the warranty.  What fun!</b></p>
+<h2>Checking Out the Innards</h2>
+<p>I did want to have some fallback if it turned out the scanner didn&#8217;t work at all, but there was an annoying warranty sticker that I didn&#8217;t want to harm. Being unable to peel it off cleanly, I decided to cut it cleanly and hope nobody would notice if I tried to return it.</p>
+<p class="centre">
+  <img src="img/scancam/dscn3140.jpg" alt="The main PCB. This board was mounted on the scanner housing." title="The main PCB. This board was mounted on the scanner housing." />
+</p>
+<p class="centre"><b> The main PCB.  This board was mounted on the scanner housing.</b></p>
+<p>The internals of the scanner are surprisingly simple, thanks to VLSI technology. There&#8217;s the front button panel, a toothed belt driven by a stepper motor (that works through a few gears) that drives the CCD assembly, and a small board containing a few miscellaneous components plus a Grand Tech 6816 chip, which turns out to be the brains of the thing. (I know thanks to the experience finding a driver, which turned out to be the GT68xx.)</p>
+<p class="centre">
+  <img src="img/scancam/dscn3150.jpg" alt="Mirror assembly with side removed" title="Mirror assembly with side removed" />
+</p>
+<p class="centre"><b> Mirror assembly with side removed</b></p>
+<p>The CCD assembly has a neato mirror setup that allows the thing you&#8217;re scanning to be optically 20cm away from the lens.  If you look into an ordinary scanner (ie not a Canon LIDE), you&#8217;ll see the fluorescent tube and an opening next to it.  Inside the opening are four mirrors that reflect the light horizontally a couple of times, until it enters the lens.</p>
+<p class="centre">
+  <img src="img/scancam/dscn3155.jpg" alt="The lens" title="The lens" />
+</p>
+<p class="centre"><b> And here&#8217;s where the lens is.  (Looking into the lens bottom-left)</b></p>
+<p>The lens itself is quite small and has a focal length of a few centimetres.  Behind the lens is a PCB with a CCD chip and a few other bits on it.</p>
+<p>Fortunately for me, the stepper motor isn&#8217;t exactly broken, but it&#8217;s so weak that it sometimes has trouble getting started. Just for fun, I tried scanning with the cover off, shining a torch into the scanning slot. You can predict the results&#8230; However I did learn that it works best with the calibration off. I shouldn&#8217;t be surprised, as I no longer have a nice calibrated light source to perform the calibration.</p>
+<p class="centre">
+  <img src="img/scancam/dscn3143.jpg" alt="Fooling the scanner: A piece of paper permanently blocks the optical detector" title="Fooling the scanner: A piece of paper permanently blocks the optical detector" />
+</p>
+<p class="centre"><b> Fooling the scanner: A piece of paper permanently blocks the optical detector</b></p>
+<p>The CCD board also has a little photodetector to tell the scanner when it&#8217;s reached the end of the flatbed. You can see a little notch for it in the middle of the picture, near the top. The scanner only checks this detector when it&#8217;s travelling back to the starting position, so it can know when it&#8217;s arrived there. This is a big plus for me, because my CCD will soon not be travelling anywhere.  It will be liberated from the mirror assembly completely, so taping a small piece of paper over the detector makes scanning much faster. As soon as it starts &#8220;moving&#8221;, it has arrived!</p>
+<p class="centre">
+  <img src="img/scancam/dscn3145.jpg" alt="The CCD chip that actually does the scanning." title="The CCD chip that actually does the scanning." />
+</p>
+<p class="centre"><b> The CCD chip that actually does the scanning.  The insert shows the three colours on the chip.</b></p>
+<p>The CCD itself was a small surprise to me because I&#8217;ve never seen one before. Of course, I <em>was</em> expecting it to be a line. The whole thing is about 4cm long. The colour filters were not apparent to the naked eye&#8201;&#8212;&#8201;I only saw them after I looked at the pictures :-).</p>
+<p class="centre">
+  <img src="img/scancam/first-pic.jpg" alt="First Image -- me!" title="First Image -- me!" />
+</p>
+<p class="centre"><b> First Image: The first photograph from my scanner.  It&#8217;s me! (Man I&#8217;m good-looking)</b></p>
+<h2>First Scans</h2>
+<p>When it was daylight I tried putting a lens over the CCD, at about the focal length (to focus at infinity). Actually, the distance was determined by the size of the cardboard square I happened to have. I did a scan and moved my face past the lens, and presto! a beautiful rendition of me!</p>
+<p>This image obviously leaves a lot to be desired. One easily visible problem is the overall red cast in the picture. I&#8217;m not sure if this is due to infra-red light swamping the CCD, or if it&#8217;s a white-balance problem. This needs some investigation. The focus is also quite abysmal, and it might help if I moved my head past the scanner at just the right speed.</p>
+<p>I did a lot more playing around, trying to rotate the CCD + shield + lens assembly while the thing was &#8220;scanning&#8221;, with some positive results. The ambient indoor light was sufficient for a scan.  Scanning outdoors just blew it away and everything came out white.</p>
+<p class="centre">
+  <img src="img/scancam/outside-small.jpg" alt="My first nature photo with the scanner camera" title="My first nature photo with the scanner camera" />
+</p>
+<p class="centre"><b> My first nature photo with the scanner camera</b></p>
+<p>I tried putting a piece of paper with a hole punched in it behind the lens as an aperture, which improved matters. Finally, I added another paper with a smaller hole in front, and scanned out the door.</p>
+<p>At this point I need to improve my lens and rotation technologies. I actually plan to use my old Minolta 7000 film camera and lens, placing the CCD across the film rails. (I&#8217;m going fully digital for my photography anyway). And I still need that old stepper motor and belt, to attempt to drive the head of a tripod at the correct speed.</p>
+<p>Here&#8217;s a picture of the &#8220;camera&#8221; to date.</p>
+<p class="centre">
+  <img src="img/scancam/dscn3160.jpg" alt="Scanner Camera to date" title="Scanner Camera to date" />
+</p>
+<p class="centre"><b> Scanner camera to date</b></p>
+<h2>Improving the Optics</h2>
+<p>[Late 2004]</p>
+<div class="sidebarblock">
+<p class="centre">
+  <img src="img/scancam/lensmount.jpg" alt="The lens mounted on bellows" title="The lens mounted on bellows" />
+</p>
+<p class="centre"><b> The lens mounted on bellows</b></p>
+</div>
+<p>Months later, I&#8217;m back on the trail.  The entire device was far too fragile for and serious use, so I set about improving things.  First, I wanted to mount the CCD behind a nice lens, but how?  I was now back &#8220;home&#8221; in Australia and had a few more resources available&#8201;&#8212;&#8201;the relevant ones turned out to be some old jiffy boxes, an old 28mm lens, and a bellows of the type used for photomacrography.</p>
+<p>The lens had lost its mounting ring long since.  I was told that it had once been dropped from a height and saved by a quick kick from below, but now&#8230; basically useless.  I used some imagination to mount it to the lens-end of the bellows.</p>
+<p>Getting the CCD mounted was rather more difficult.  I first had to construct a circle out of jiffy-box plastic to mount in the bellows as designed, and then cut a slot out of it for the CCD.  It also turned out that the PCB was really too long to physically mount on the bellows&#8201;&#8212;&#8201;something had to give.</p>
+<div class="sidebarblock">
+<p class="centre">
+  <img src="img/scancam/resistors.jpg" alt="Voltage Divider" title="Voltage Divider" />
+</p>
+<p class="centre"><b> Voltage divider</b></p>
+</div>
+<p>The only thing on the far end of the PCB (away from the connector) was the optical end-sensing switch and a connector to the fluorescent tube that lights the scanned subject.  I wondered if I could kill two birds with one stone by tricking the scanner electrically to believe that it was at the end of the scan bed.  Tracing the tracks leading to the detector, I found the return signal wire and measured the voltage that appeared on it when the detector was open and blocked.  Then, a simple voltage divider &#8220;fixed&#8221; the problem.</p>
+<div class="sidebarblock">
+<p class="centre">
+  <img src="img/scancam/finalpcb.jpg" alt="The final ``fixed'' PCB" title="The final ``fixed'' PCB" />
+</p>
+<p class="centre"><b> The final &#8220;fixed&#8221; PCB</b></p>
+</div>
+<p>Now that I had the bodginess and lens problems fixed, it was time to do some scanning.</p>
+<p>I mounted the &#8220;camera&#8221; on a tripod and scanned.  I&#8217;ve done a lot of these scans and had all sorts of problems getting nice images out of the thing.  To do it properly, of course, I&#8217;d need a motor drive on the tripod.  But the light outside was just too contrasty, the colour-balance too difficult, and the entire setup just too darn finicky to really work well.  After a while I did manage to get a reasonable image out the window though.</p>
+<p class="centre">
+  <img src="img/scancam/backyard.jpg" alt="Scan of my backyard" title="Scan of my backyard" />
+</p>
+<p class="centre"><b> Scan of my backyard</b></p>
+<p>At this point I became quite fed up with the entire thing.  My original plan had been to take panoramic photos of any width, but I could see it wasn&#8217;t going to be practical.  Apart from the pathetic colour and exposure, it would be quite impractical to take my contraption anywhere.  I&#8217;ve decided to use my new digital camera to make panoramic photos in future.</p>
+    </div>
+    <div id="foot">
+
+    <!-- Google CSE Search Box Begins  -->
+    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
+    <b>Search:</b>
+    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="text" name="q" size="30">
+    <input type="submit" name="sa" value="Search" class="button">
+    </form>
+    <!-- Google CSE Search Box Ends -->
+<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
+<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
+<p><em>Last updated Monday, September 29, 2014</em></p>
+</div>
+</div>
+</body>
+</html>
