@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Removing gvfs</title>
+<title>Entering the Void</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="copyright" href="/copyright.html">
 <meta name="description" content="">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.10)">
 <meta name="author" content="Jared Henley">
 <meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
@@ -36,15 +36,26 @@
     <div id="trail">
 <ul>
 <li>
-Removing gvfs
+Entering the Void
 </li>
 </ul>
     </div>
     <div id="content">
-<h1>Removing gvfs</h1>
-<p>It is possible (at least on my systems) to remove gvfs.  Why do this?  Well it doesn&#8217;t do anything useful for me, and it does leave processes lying around after logout.  One time it even held open files on a USB drive, which is a real pest when you want to remove it.</p>
-<p>Getting rid of gvfs turned out to be really easy.  Nothing I use depends on it, although there are some optional dependencies.  Nothing I&#8217;ve been used to has stopped working, either.</p>
-<p>Now if I can get rid of those other non-dying processes&#8230;</p>
+<h1>Entering the Void</h1>
+<p>Or, my experiment with Void Linux.</p>
+<p>With a 32-bit computer and ArchLinux now 64-bit only, it’s time to try something that will run on the old CPU.  I picked Void Linux because it’s very basic (like Arch), and doesn’t have systemd.  I’m not a great fan of systemd, in part because of the usual complaints, but moreso because it is another milestone on the road to ruining everything that was good about Linux (ie, user control over the system&#8201;&#8212;&#8201;most distros seem to have this big blob (or set of big blobs) in the middle that are hard to figure out and not very modular).</p>
+<p>The void installer was very good.  So good, in fact, that there’s nothing to report.  It just got the job done.</p>
+<p>The next step was to configure /etc/crypttab to unlock my encrypted /home partition.  That was also simplicity itself.</p>
+<p>Void Linux is very Arch-like in many ways.  The main thing to do was to get extra packages to have a working system.  Are there any issues?</p>
+<ul>
+<li>
+I had a little trouble with NetworkManager.  First, it required dbus, no surprise there, but I had to tell it to run myself (hooray!).  Second, there was some kind of issue with filesystem permissions to delete connections, but that resolved itself with either a reboot or adding myself to an appropriate group (no idea which one that was, though).
+</li>
+<li>
+XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons are greyed, and the suspend-to-RAM and hibernate buttons don’t show at all.  This is a typical problem with learning a new distro.  I&#8217;ll solve that later.
+</li>
+</ul>
+<p>So far that seems to be it.</p>
     </div>
     <div id="foot">
 
@@ -59,7 +70,7 @@ Removing gvfs
     <!-- Google CSE Search Box Ends -->
 <p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
 <p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Monday, December  5, 2016</em></p>
+<p><em>Last updated Sunday, January 20, 2019</em></p>
 </div>
 </div>
 </body>
