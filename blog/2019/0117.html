@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Jared's Blog</title>
+<title>Entering the Void</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="copyright" href="/copyright.html">
-<meta name="description" content="Jared's Blog">
+<meta name="description" content="">
 <meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.10)">
 <meta name="author" content="Jared Henley">
 <meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
@@ -36,10 +36,13 @@
     <div id="trail">
 <ul>
 <li>
-<a href="../index.html">Jared Henley</a>
+<a href="../../index.html">Jared Henley</a>
 </li>
 <li>
-Jared&#8217;s Blog
+<a href="../index.html">Jared&#8217;s Blog</a>
+</li>
+<li>
+Entering the Void
 </li>
 </ul>
     </div>
@@ -62,40 +65,6 @@ XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons
 <p>So far that seems to be it.</p>
 <p><em>Posted on Thursday, January 17, 2019</em></p>
 </div>
-<div class="blogpost">
-<h1>Removing gvfs</h1>
-<p>It is possible (at least on my systems) to remove gvfs.  Why do this?  Well it doesn&#8217;t do anything useful for me, and it does leave processes lying around after logout.  One time it even held open files on a USB drive, which is a real pest when you want to remove it.</p>
-<p>Getting rid of gvfs turned out to be really easy.  Nothing I use depends on it, although there are some optional dependencies.  Nothing I&#8217;ve been used to has stopped working, either.</p>
-<p>Now if I can get rid of those other non-dying processes&#8230;</p>
-<p><em>Posted on Monday, December  5, 2016</em></p>
-</div>
-<div class="blogpost">
-<h1>Disk Encryption in Linux</h1>
-<p>My experiment with FreeBSD is over.  It just wasn&#8217;t worth the bother.  FreeBSD is good, but I don&#8217;t need to muck about with USB drive mounting (what? In 2016?) layers of compatibility code, and the like.  But the final straw was attempting to install TeX and finding that the packaging such that I had to install either not enough to get the job done, or way too much (ie a massive download).  So I&#8217;m back to Linux.</p>
-<p>I set up my little EeePC with an encrypted /home partition in order to keep things somewhat secure in case I lose the thing.  Earlier I mentioned how easy this was in FreeBSD.  It&#8217;s not much different in Linux.</p>
-<p>I went the dm-crypt route, as it&#8217;s the most straightforward of the options.  First, set up the encryption:</p>
-<div class="listingblock">
-<pre><code># cryptsetup luksFormat /dev/sd??</code></pre>
-</div>
-<p>You get asked for a password, and it&#8217;s all done.  Next you get the encryption/decryption going.</p>
-<div class="listingblock">
-<pre><code># cryptsetup open /dev/sd?? home</code></pre>
-</div>
-<p>Finally, create a filesystem.</p>
-<div class="listingblock">
-<pre><code># mkfs.btrfs /dev/mapper/home</code></pre>
-</div>
-<p>Then you fill in /etc/crypttab with the appropriate data to get the partition unlocked at boot time.  In my case, I added the following line:</p>
-<div class="listingblock">
-<pre><code>home       UUID=&lt;the uuid of the LUKS container&gt;    none</code></pre>
-</div>
-<p>The UUID you need is returned from the command</p>
-<div class="listingblock">
-<pre><code>cryptsetup luksUUID /dev/path/to/partition</code></pre>
-</div>
-<p>The &#8216;none&#8217; tells dm-crypt to prompt for a password, which happens at boot.  And then you&#8217;re done!  Obviously you still need to add the encrypted filesystem to /etc/fstab to get it mounted, though.</p>
-<p><em>Posted on Wednesday, April 27, 2016</em></p>
-</div>
 <p><strong><a href="/blog/contents.html">All posts</a></strong></p>
     </div>
     <div id="foot">
@@ -111,7 +80,7 @@ XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons
     <!-- Google CSE Search Box Ends -->
 <p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
 <p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Sunday, January 20, 2019</em></p>
+<p><em>Last updated Thursday, January 17, 2019</em></p>
 </div>
 </div>
 </body>
