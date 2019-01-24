@@ -2,7 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Jared's Blog</title>
 <id>http://jared.henley.id.au/blog/atom.xml</id>
-<updated>2019-01-16T13:00:00Z</updated>
+<updated>2019-01-21T13:00:00Z</updated>
+<entry>
+<link href="http://jared.henley.id.au/blog/2019/0122.html"/>
+<title>Getting Void Linux to work right</title>
+<summary>None</summary>
+<updated>2019-01-21T13:00:00Z</updated>
+</entry>
 <entry>
 <link href="http://jared.henley.id.au/blog/2019/0117.html"/>
 <title>Entering the Void</title>
