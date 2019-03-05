@@ -45,6 +45,39 @@ Jared&#8217;s Blog
     </div>
     <div id="content">
 <div class="blogpost">
+<h1>Record my desktop with ffmpeg</h1>
+<p>It seems that desktop recording is quite the pest.  Not that I&#8217;ve tried much, but I also haven&#8217;t really found a "go-to" piece of software for X11 that just does it.  So the last time I wanted to record my screen, I decided to have a go with just plain command-line tools.</p>
+<p>It turns out that this is also ridiculously easy.</p>
+<div class="listingblock">
+<pre><code>ffmpeg -f x11grab -s 500x300 -r 25 -i :0.0 foo.mp4</code></pre>
+</div>
+<p>The -s option tells ffmpeg the pixel size of the region you want to grab; -r is the frame rate, -i is your X screen, and the video is written to foo.mp4.</p>
+<p>If you don&#8217;t want to start the screen capture in the top-left, just use something like <code>-i :0.0+100,200</code> to specify where to start.</p>
+<p>The <a href="https://trac.ffmpeg.org/wiki/Capture/Desktop">ffmpeg website</a> has more info.</p>
+<p><em>Posted on Tuesday, February 19, 2019</em></p>
+</div>
+<div class="blogpost">
+<h1>Find and replace in geany</h1>
+<p>The other day I wanted to do a find-and-replace in <a href="http://www.geany.org/">geany</a> using a regex in the find.  I wanted to turn something like this</p>
+<div class="listingblock">
+<pre><code>Field name: value</code></pre>
+</div>
+<p>into</p>
+<div class="listingblock">
+<pre><code>Field name: value plus some more</code></pre>
+</div>
+<p>Since geany supports regex searching, I decided it was time to find out how to do regex replacements too.  The way it works, is that you put parentheses around each match that you want to be able to use in the replacement string, and then reference these replacements using backslash-number.  So the find string becomes</p>
+<div class="listingblock">
+<pre><code>^Field name: (.*)</code></pre>
+</div>
+<p>and the replacement string becomes</p>
+<div class="listingblock">
+<pre><code>Field name: \1 plus some more</code></pre>
+</div>
+<p>That was too easy.</p>
+<p><em>Posted on Monday, February 18, 2019</em></p>
+</div>
+<div class="blogpost">
 <h1>Getting Void Linux to work right</h1>
 <p>My experiment with Void Linux started very well.  There was the usual round of installing all the packages I needed to make the computer useful, and then there was the business of getting nonfunctional stuff to work.  Being that Void doesn’t modify packages, this was also an educational experience.</p>
 <h2>The trackpad</h2>
@@ -94,31 +127,6 @@ end</code></pre>
 <p>This typically starts devmon when I log in, and logging out should kill it.</p>
 <p><em>Posted on Tuesday, January 22, 2019</em></p>
 </div>
-<div class="blogpost">
-<h1>Entering the Void</h1>
-<p>Or, my experiment with Void Linux.</p>
-<p>With a 32-bit computer and ArchLinux now 64-bit only, it’s time to try something that will run on the old CPU.  I picked Void Linux because it’s very basic (like Arch), and doesn’t have systemd.  I’m not a great fan of systemd, in part because of the usual complaints, but moreso because it is another milestone on the road to ruining everything that was good about Linux (ie, user control over the system&#8201;&#8212;&#8201;most distros seem to have this big blob (or set of big blobs) in the middle that are hard to figure out and not very modular).</p>
-<p>The void installer was very good.  So good, in fact, that there’s nothing to report.  It just got the job done.</p>
-<p>The next step was to configure /etc/crypttab to unlock my encrypted /home partition.  That was also simplicity itself.</p>
-<p>Void Linux is very Arch-like in many ways.  The main thing to do was to get extra packages to have a working system.  Are there any issues?</p>
-<ul>
-<li>
-I had a little trouble with NetworkManager.  First, it required dbus, no surprise there, but I had to tell it to run myself (hooray!).  Second, there was some kind of issue with filesystem permissions to delete connections, but that resolved itself with either a reboot or adding myself to an appropriate group (no idea which one that was, though).
-</li>
-<li>
-XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons are greyed, and the suspend-to-RAM and hibernate buttons don’t show at all.  This is a typical problem with learning a new distro.  I&#8217;ll solve that later.
-</li>
-</ul>
-<p>So far that seems to be it.</p>
-<p><em>Posted on Thursday, January 17, 2019</em></p>
-</div>
-<div class="blogpost">
-<h1>Removing gvfs</h1>
-<p>It is possible (at least on my systems) to remove gvfs.  Why do this?  Well it doesn&#8217;t do anything useful for me, and it does leave processes lying around after logout.  One time it even held open files on a USB drive, which is a real pest when you want to remove it.</p>
-<p>Getting rid of gvfs turned out to be really easy.  Nothing I use depends on it, although there are some optional dependencies.  Nothing I&#8217;ve been used to has stopped working, either.</p>
-<p>Now if I can get rid of those other non-dying processes&#8230;</p>
-<p><em>Posted on Monday, December  5, 2016</em></p>
-</div>
 <p><strong><a href="/blog/contents.html">All posts</a></strong></p>
     </div>
     <div id="foot">
@@ -134,7 +142,7 @@ XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons
     <!-- Google CSE Search Box Ends -->
 <p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
 <p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Thursday, January 24, 2019</em></p>
+<p><em>Last updated Tuesday, March  5, 2019</em></p>
 </div>
 </div>
 </body>
