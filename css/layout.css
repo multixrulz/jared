@@ -43,7 +43,7 @@ padding: 0;
 body {
 background: #202020;
 font-family: "Ubuntu";
-font-size: 18px;
+font-size: 16px;
 }
 
 /* Layout */
@@ -82,6 +82,7 @@ position: absolute;
 top: 0;
 right: 0;
 background: none !important;
+width: 15em;
 }
 
 #menu ul {
@@ -126,7 +127,9 @@ content: "\0020 \0020 \0020 \00BB \0020";
 
 #content {
 background: #F3F3F3;
-padding: 1px 2em 3.5em 2em;
+padding: 0 2em 2em 2em;
+margin-top: 0;
+border-top: solid #FFDD00 0.1em;
 }
 
 #foot {
@@ -227,6 +230,21 @@ text-align: center !important;
 text-align: right !important;
 }
 
+p.blogdate{
+font-size: 90%;
+text-align: right;
+}
+p.blogdate:before{
+content: "";
+display: block;
+position: relative;
+right: -90%;
+width: 10%;
+top: 0;
+border-top: solid 0.1em black;
+padding-top: 0.5em;
+}
+
 /* Button List */
 .buttons ul {
 list-style: none;
@@ -254,28 +272,37 @@ box-shadow: 0.4em 0.4em 0.5em rgba(0, 0, 0, 0.4);
 img.icon {
 margin: 0.4em 0.4em 0.6em 0;
 vertical-align: middle;
-}
-div.roompage {
-margin-top: 4em;
-}
-div.roompage + div.roompage {
-margin-top: 10em;
+height: 4.5em;
 }
 
-/* Blog posts */
-.blogpost {
-padding: 0 0 0.8em 0;
-box-shadow: 0em 0.4em 0.2em -0.2em rgba(0,0,0,0.4);
+/* Div layouts */
+div.table {
+position: relative;
+display: inline-block;
+margin: 2em;
+}
+div.distinct {
+border-radius: 0.5em;
+border-shadow: 0 0 0.2em;
+border-color: black;
+padding: 1em;
+margin: 1em;
+}
+div.centre {
+display: table;
+margin-left: auto;
+margin-right: auto;
 }
 
 /* divs in text */
-.sidebarblock, .footnote {
+.sidebar, .footnote {
 float: right;
 clear: right;
-max-width: 40%;
-margin: 0.5em !important;
+width: 12em;
+right: -45em;
 padding: 1em;
 border: solid 1px;
+border-radius: 0.5em;
 }
 .sidebarblock li {
 margin-left: 0;

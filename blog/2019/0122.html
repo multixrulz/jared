@@ -7,11 +7,10 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="copyright" href="/copyright.html">
-<meta name="description" content="">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.10)">
+<meta name="description" content="The business of getting nonfunctional stuff to work.">
+<meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="copyright" content="&copy; 2019 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -19,7 +18,7 @@
     <div id="head">
         <div id="hd2">
             <img class="stretch" src="/img/headbg_gold.png" alt="background">
-            <p>Jared's Blog</p>
+            <p>My blog</p>
             <img id="topimg" src="/img/sunflower.png" alt="nice pic">
         </div>
     </div>
@@ -27,7 +26,6 @@
         <ul>
             <li><a href="/" title="Jared Henley's Website">Home</a></li>
             <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
-            <li><a href="/photos" title="Photos and photography">Photos</a></li>
             <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
             <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
             <li><a href="/software/" title="Software">Software</a></li>
@@ -35,19 +33,12 @@
     </div>
     <div id="trail">
 <ul>
-<li>
-<a href="../../index.html">Jared Henley</a>
-</li>
-<li>
-<a href="../index.html">Jared&#8217;s Blog</a>
-</li>
-<li>
-Getting Void Linux to work right
-</li>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/blog/">My blog</a></li>
 </ul>
     </div>
     <div id="content">
-<div class="blogpost">
+
 <h1>Getting Void Linux to work right</h1>
 <p>My experiment with Void Linux started very well.  There was the usual round of installing all the packages I needed to make the computer useful, and then there was the business of getting nonfunctional stuff to work.  Being that Void doesn’t modify packages, this was also an educational experience.</p>
 <h2>The trackpad</h2>
@@ -55,27 +46,27 @@ Getting Void Linux to work right
 <p>I didn’t want to fix this with an X configuration file, primarily because it doesn’t live in my home directory and is thus vulnerable to disappearing with an OS install.</p>
 <p>I discovered xinput, which allows you to query and set various input-related settings in a running X server.</p>
 <p>To get a list of input devices:</p>
-<div class="listingblock">
-<pre><code>xinput</code></pre>
-</div>
+<pre><code>xinput
+</code></pre>
+
 <p>To see the available properties of a device (use the device name reported above):</p>
-<div class="listingblock">
-<pre><code>xinput list-props &lt;device name&gt;</code></pre>
-</div>
+<pre><code>xinput list-props &lt;device name&gt;
+</code></pre>
+
 <p>To set a property:</p>
-<div class="listingblock">
-<pre><code>xinput set-prop "ETPS/2 Elantech Touchpad" 287 1</code></pre>
-</div>
-<p>where "ETPS/2 Elantech Touchpad" is the device name, 287 is the number of the property to set, and 1 is the value I want there.</p>
+<pre><code>xinput set-prop &quot;ETPS/2 Elantech Touchpad&quot; 287 1
+</code></pre>
+
+<p>where &ldquo;ETPS/2 Elantech Touchpad&rdquo; is the device name, 287 is the number of the property to set, and 1 is the value I want there.</p>
 <p>I run this in .xinitrc before starting xfce4.</p>
 <h2>X display settings</h2>
 <p>I discovered the wonders of xrandr some time ago, but it’s worth documenting.  With a laptop, you (or at least I) frequently end up connecting to a variety of different screens.  These are often TVs that just don’t correctly report their capabilities in the EDID (which is the way a monitor tells a computer its name, the resolutions it supports, etc).</p>
 <p>To fix this, you can sometimes supply an EDID file to the kernel at boot, or edit the xorg configuration, or just use xrandr on a running X server.</p>
 <p>To create a new mode, and assign it to a particular output use this:</p>
-<div class="listingblock">
-<pre><code>xrandr --newmode "1920x1080 60Hz" 148.500MHz 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
-xrandr --addmode DP-1 "1920x1080 60Hz"</code></pre>
-</div>
+<pre><code>xrandr --newmode &quot;1920x1080 60Hz&quot; 148.500MHz 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
+xrandr --addmode DP-1 &quot;1920x1080 60Hz&quot;
+</code></pre>
+
 <p>You can get the output names by running xrandr with no arguments.  To get modelines, use the <code>gtf</code> or <code>cvt</code> programs.  The new mode will now be available in your favourite monitor-configuring tool, be that xrandr or your DE’s settings program.</p>
 <p>I run this in .xinitrc before starting xfce4.</p>
 <h2>Getting xfce4’s restart and shutdown buttons to work</h2>
@@ -84,35 +75,44 @@ xrandr --addmode DP-1 "1920x1080 60Hz"</code></pre>
 <h2>Fixing sound</h2>
 <p>Intel HDA sound is always a pest.  My sound used to work in Arch, but that may have been due to some tweaking that got blown away when the root partition was reformatted.  My problem was that sound would go to the headphones when they weren’t plugged in but when they were plugged in, sound would go to the speakers.</p>
 <p>I finally stumbled upon the awesome tool <code>hdajackretask</code>, which is a part of <code>alsa-tools</code>.  The snd-hda-intel module can be reconfigured on the fly by writing values to the correct section of <code>/sys</code>.  You just fiddle around in hdajackrestask until things seem to work right, then grab the shell script it creates from <code>/tmp/hda-jack-retask-??????/script.sh</code>.</p>
-<p>I tweaked the script to stop it trying to write logging information to /tmp, and called it from <code>/etc/rc.local</code> in order to apply the sound changes at boot&#8201;&#8212;&#8201;oh the joy of having rc.local again!</p>
+<p>I tweaked the script to stop it trying to write logging information to /tmp, and called it from <code>/etc/rc.local</code> in order to apply the sound changes at boot &ndash; oh the joy of having rc.local again!</p>
 <h2>Automounting of USB drives</h2>
 <p>I’ve been using devmon and udevil for years.  With systemd there’s some bodgy-looking method for running devmon when a user logs in.  Without systemd you just put it in your .bashrc or equivalent shell startup script.  I’m using fish, so what I’ve ended up with is:</p>
-<div class="listingblock">
 <pre><code>pidof -x devmon &gt; /dev/null 2&gt;/dev/null
 if test $status -ne 0
-    echo "Starting devmon"
+    echo &quot;Starting devmon&quot;
     devmon -g &amp;
-end</code></pre>
-</div>
+end
+</code></pre>
+
 <p>This typically starts devmon when I log in, and logging out should kill it.</p>
-<p><em>Posted on Tuesday, January 22, 2019</em></p>
-</div>
-<p><strong><a href="/blog/contents.html">All posts</a></strong></p>
+
+<p class="blogdate">Posted Tuesday, January 22, 2019</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
     </div>
     <div id="foot">
 
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
-    <b>Search:</b>
-    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
-    <input type="hidden" name="cof" value="FORID:10">
-    <input type="text" name="q" size="30">
-    <input type="submit" name="sa" value="Search" class="button">
-    </form>
-    <!-- Google CSE Search Box Ends -->
-<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
-<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Tuesday, January 22, 2019</em></p>
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, October  2, 2019 at 09:22:50</em></p>
+<p><em>Last modified: Wednesday, October  2, 2019 at 07:34:14</em></p>
 </div>
 </div>
 </body>

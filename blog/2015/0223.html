@@ -7,11 +7,10 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="copyright" href="/copyright.html">
-<meta name="description" content="">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="description" content="Today I'm taking a look at the first contender: [Pyjs](http://pyjs.org)">
+<meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="copyright" content="&copy; 2019 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -19,7 +18,7 @@
     <div id="head">
         <div id="hd2">
             <img class="stretch" src="/img/headbg_gold.png" alt="background">
-            <p>Jared's Blog</p>
+            <p>My blog</p>
             <img id="topimg" src="/img/sunflower.png" alt="nice pic">
         </div>
     </div>
@@ -27,7 +26,6 @@
         <ul>
             <li><a href="/" title="Jared Henley's Website">Home</a></li>
             <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
-            <li><a href="/photos" title="Photos and photography">Photos</a></li>
             <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
             <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
             <li><a href="/software/" title="Software">Software</a></li>
@@ -35,79 +33,80 @@
     </div>
     <div id="trail">
 <ul>
-<li>
-<a href="../../index.html">Jared Henley</a>
-</li>
-<li>
-<a href="../index.html">Jared&#8217;s Blog</a>
-</li>
-<li>
-Python in the Browser: Pyjs
-</li>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/blog/">My blog</a></li>
 </ul>
     </div>
     <div id="content">
-<div class="blogpost">
+
 <h1>Python in the Browser: Pyjs</h1>
-<p>Today I&#8217;m taking a look at the first contender: <a href="http://pyjs.org">Pyjs</a>.</p>
+<p>Today I’m taking a look at the first contender: <a href="http://pyjs.org">Pyjs</a>.</p>
 <h2>What is it, exactly</h2>
 <p>From the Pyjs website:</p>
-<blockquote>
 <p>pyjs is a Rich Internet Application (RIA) Development Platform for both Web and Desktop. With pyjs you can write your JavaScript-powered web applications entirely in Python.</p>
 <p>pyjs contains a Python-to-JavaScript compiler, an AJAX framework and a Widget Set API. pyjs started life as a Python port of Google Web Toolkit, the Java-to-JavaScript compiler.</p>
-<p align="right">
-</p>
-</blockquote>
+<hr />
 <p>Recent pyjs releases are 0.8.1a (May 2012) and 0.8 (June 2011).  Activity on <a href="https://github.com/pyjs/pyjs/graphs/contributors">github</a> has been basically falling off since then, so it seems that it may be reaching the end of its life.</p>
 <h2>Licence</h2>
 <p>Pyjs is licenced under the Apache Licence v2.0, which is a free software licence compatible with the GPL v3.</p>
 <h2>Installation</h2>
-<p>I like to use my system package manager to install software.  Pyjs isn&#8217;t available there, and pyjs recommends installing via pip.  Installation <em>should</em> be easy&#8201;&#8212;&#8201;the instructions make it appear that way&#8201;&#8212;&#8201;but I haven&#8217;t tried that yet.  I balked at a few other things in pyjs first.</p>
+<p>I like to use my system package manager to install software.  Pyjs isn’t available there, and pyjs recommends installing via pip.  Installation <em>should</em> be easy &ndash; the instructions make it appear that way &ndash; but I haven’t tried that yet.  I balked at a few other things in pyjs first.</p>
 <h2>Online examples</h2>
 <p>The <a href="http://pyjs.org/examples/">examples</a> are not compelling.</p>
-<p>My first complaint is that the page loads, and then there is a pause (of a few seconds!) before content is rendered.  That&#8217;s completely unacceptable in 2015.  How slow would it be on a mobile device?  The answer, using my phone, is: about the same.  Once things get going, response is OK though.</p>
-<p>My next complaint is that the "Controls" example doesn&#8217;t work properly on my phone, and the "Canvas Processing" example fails on both mobile and desktop with an error message.</p>
-<p>The pyjs examples I looked at are also <em>ugly</em>.  That&#8217;s probably because the CSS hasn&#8217;t been set up to make it attractive, but I&#8217;m not sure.</p>
-<p>The main fail I give to pyjs though, is that every program is an AJAX program&#8201;&#8212;&#8201;i.e. it <em>requires</em> round-trips to the server.  This is not what I want.  Programs should be self-contained on the client&#8217;s browser as much as possible, to improve responsiveness and decrease server load.</p>
+<p>My first complaint is that the page loads, and then there is a pause (of a few seconds!) before content is rendered.  That’s completely unacceptable in 2015.  How slow would it be on a mobile device?  The answer, using my phone, is: about the same.  Once things get going, response is OK though.</p>
+<p>My next complaint is that the &ldquo;Controls&rdquo; example doesn’t work properly on my phone, and the &ldquo;Canvas Processing&rdquo; example fails on both mobile and desktop with an error message.</p>
+<p>The pyjs examples I looked at are also <em>ugly</em>.  That’s probably because the CSS hasn’t been set up to make it attractive, but I’m not sure.</p>
+<p>The main fail I give to pyjs though, is that every program is an AJAX program &ndash; i.e. it <em>requires</em> round-trips to the server.  This is not what I want.  Programs should be self-contained on the client’s browser as much as possible, to improve responsiveness and decrease server load.</p>
 <h2>Learning Curve</h2>
-<p>Pyjs is going to take some learning due to the fact that it provides its own widget toolkit  That said, the "hello world" is not that fearsome.</p>
-<div class="listingblock">
-<pre><code>from pyjamas import Window
+<p>Pyjs is going to take some learning due to the fact that it provides its own widget toolkit  That said, the &ldquo;hello world&rdquo; is not that fearsome.</p>
+<pre><code>
+from pyjamas import Window
 from pyjamas.ui import RootPanel, Button
 
 def greet(sender):
-    Window.alert("Hello, AJAX!")
+    Window.alert(&quot;Hello, AJAX!&quot;)
 
 class Hello:
     def onModuleLoad(self):
-        b = Button("Click me", greet)
-        RootPanel().add(b)</code></pre>
-</div>
+        b = Button(&quot;Click me&quot;, greet)
+        RootPanel().add(b)
+
+</code></pre>
+
 <p>This is actually easier than gtk or Qt.</p>
 <h2>Coverage of the Python standard library</h2>
-<p>Pyjs claims almost complete coverage of Python 2.5/2.6.  It&#8217;s important to notice that this covers the Python <em>language</em>, and not the Python <em>standard library</em>.  I have found no indication that any of the standard library is included at all.</p>
+<p>Pyjs claims almost complete coverage of Python 2.5/2.6.  It’s important to notice that this covers the Python <em>language</em>, and not the Python <em>standard library</em>.  I have found no indication that any of the standard library is included at all.</p>
 <h2>Programming graphics</h2>
 <p>Nothing in the pyjs examples inspires much confidence in the ability to do graphics required for simple games.  Minesweeper comes closest though.  Asteroids might be able to show something, if it actually worked at all.</p>
 <h2>Conclusion</h2>
-<p>Pyjs appears to be a poor fit for my requirements.  It absolutely requires AJAX interactions between browser and server, doesn&#8217;t appear to support the Python standard library, and the examples are ugly and sometimes broken.</p>
-<p><em>Posted on Monday, February 23, 2015</em></p>
-</div>
-<p><strong><a href="/blog/contents.html">All posts</a></strong></p>
+<p>Pyjs appears to be a poor fit for my requirements.  It absolutely requires AJAX interactions between browser and server, doesn’t appear to support the Python standard library, and the examples are ugly and sometimes broken.</p>
+
+<p class="blogdate">Posted Monday, February 23, 2015</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
     </div>
     <div id="foot">
 
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
-    <b>Search:</b>
-    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
-    <input type="hidden" name="cof" value="FORID:10">
-    <input type="text" name="q" size="30">
-    <input type="submit" name="sa" value="Search" class="button">
-    </form>
-    <!-- Google CSE Search Box Ends -->
-<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
-<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Monday, February 23, 2015</em></p>
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, October  2, 2019 at 09:22:45</em></p>
+<p><em>Last modified: Saturday, September 28, 2019 at 19:44:18</em></p>
 </div>
 </div>
 </body>

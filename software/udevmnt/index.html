@@ -7,11 +7,10 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="copyright" href="/copyright.html">
 <meta name="description" content="Automatically mounting USB drives under Linux, without the use of HAL and/or DBUS">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="copyright" content="&copy; 2019 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -27,7 +26,6 @@
         <ul>
             <li><a href="/" title="Jared Henley's Website">Home</a></li>
             <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
-            <li><a href="/photos" title="Photos and photography">Photos</a></li>
             <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
             <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
             <li><a href="/software/" title="Software">Software</a></li>
@@ -35,43 +33,45 @@
     </div>
     <div id="trail">
 <ul>
-<li>
-<a href="../../index.html">Jared Henley</a>
-</li>
-<li>
-<a href="../index.html">Software</a>
-</li>
-<li>
-udevmnt
-</li>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/software/">Software</a></li>
+<li><a href="/software/udevmnt/">udevmnt</a></li>
 </ul>
     </div>
     <div id="content">
 <h1>udevmnt</h1>
-<p><a href="download"><img class="icon" src="/img/icons/download.png" alt="Download udevmnt" title="Download udevmnt" /></a> Download</p>
-<p>Ever since I got my first USB stick drive I&#8217;ve been frustrated at how difficult it is to manage these things in Linux.  At first I had to run dmesg to find the device file, log in as root (or sudo once I got around to it), and manually mount it.  This was unsatisfactory to say the least.</p>
-<p>Now that the Linux desktop is all grown up there are better solutions, right?  Well, kind-of.  KDE and Gnome can look after this for you, but I don&#8217;t want to run a heavy desktop environment, and besides, these solutions aren&#8217;t exactly perfect for me.  I tried ivman and had problems with it.  I tried pmount, but for non-FAT filesystems it insisted on mounting my device in a directory I couldn&#8217;t write to.  Finally sick of this nonsense enough to make my own solution, I came up with a solution, starting from some udev rules I found over at Gentoo and ArchLinux.</p>
-<p>Now my sticks and USB hard disk are automatically mounted and unmounted for me, and I can manually unmount using pumount (which I&#8217;ve integrated into ROX filer).</p>
+<p><a href=""><img src=/img/icons/download.png alt="Download icon" class="icon">
+ Download</a></p>
+<p>Ever since I got my first USB stick drive I’ve been frustrated at how difficult it is to manage these things in Linux.  At first I had to run dmesg to find the device file, log in as root (or sudo once I got around to it), and manually mount it.  This was unsatisfactory to say the least.</p>
+<p>Now that the Linux desktop is all grown up there are better solutions, right?  Well, kind-of.  KDE and Gnome can look after this for you, but I don’t want to run a heavy desktop environment, and besides, these solutions aren’t exactly perfect for me.  I tried ivman and had problems with it.  I tried pmount, but for non-FAT filesystems it insisted on mounting my device in a directory I couldn’t write to.  Finally sick of this nonsense enough to make my own solution, I came up with a solution, starting from some udev rules I found over at Gentoo and ArchLinux.</p>
+<p>Now my sticks and USB hard disk are automatically mounted and unmounted for me, and I can manually unmount using pumount (which I’ve integrated into ROX filer).</p>
 <p>Copy the files into <code>/etc/udev/rules.d</code> or wherever your distro puts its udev rules.</p>
 <h2>Update</h2>
-<p>I&#8217;ve retired udevmnt for my own system, largely (no) thanks to systemd.  I&#8217;ve replaced it with <a href="/geek/linux/udevil.html">udevil</a></p>
+<p>I’ve retired udevmnt for my own system, largely (no) thanks to systemd.  I’ve replaced it with <a href="/geek/linux/udevil.html">udevil</a></p>
 <h2>Give back</h2>
 <p>If you find this program useful, <a href="/software/giveback.html">give something back</a>.</p>
     </div>
     <div id="foot">
 
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
-    <b>Search:</b>
-    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
-    <input type="hidden" name="cof" value="FORID:10">
-    <input type="text" name="q" size="30">
-    <input type="submit" name="sa" value="Search" class="button">
-    </form>
-    <!-- Google CSE Search Box Ends -->
-<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
-<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Wednesday, February 17, 2016</em></p>
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, October  2, 2019 at 09:23:00</em></p>
+<p><em>Last modified: Saturday, September 28, 2019 at 19:44:19</em></p>
 </div>
 </div>
 </body>

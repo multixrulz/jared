@@ -7,11 +7,10 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="copyright" href="/copyright.html">
 <meta name="description" content="How to create links to other pages (and other websites) in your web pages.">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="copyright" content="&copy; 2019 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -19,7 +18,7 @@
     <div id="head">
         <div id="hd2">
             <img class="stretch" src="/img/headbg_gold.png" alt="background">
-            <p>Making Web Pages</p>
+            <p>Geeky Stuff</p>
             <img id="topimg" src="/img/sunflower.png" alt="nice pic">
         </div>
     </div>
@@ -27,7 +26,6 @@
         <ul>
             <li><a href="/" title="Jared Henley's Website">Home</a></li>
             <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
-            <li><a href="/photos" title="Photos and photography">Photos</a></li>
             <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
             <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
             <li><a href="/software/" title="Software">Software</a></li>
@@ -35,64 +33,42 @@
     </div>
     <div id="trail">
 <ul>
-<li>
-<a href="../../index.html">Jared Henley</a>
-</li>
-<li>
-<a href="../index.html">Geeky Stuff</a>
-</li>
-<li>
-<a href="index.html">Making Web Pages</a>
-</li>
-<li>
-Lesson 5: Links
-</li>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/geek/">Geeky Stuff</a></li>
 </ul>
     </div>
     <div id="content">
 <h1>Lesson 5: Links</h1>
-<p>When you click a link in a web browser, you are taken to another page.  It might look complicated, but really it&#8217;s very simple.</p>
+<p>When you click a link in a web browser, you are taken to another page.  It might look complicated, but really it’s very simple.</p>
 <h2>Links to things</h2>
-<div class="listingblock">
-<pre><code>&lt;a href="http://google.com/"&gt;Here is a link to Google&lt;/a&gt;</code></pre>
-</div>
+<pre><code>&lt;a href=&quot;http://google.com/&quot;&gt;Here is a link to Google&lt;/a&gt;
+</code></pre>
+
 <dl>
-<dt>
-a
-</dt>
-<dd>
-        anchor - a link, a bookmark
-</dd>
-<dt>
-href
-</dt>
-<dd>
-        The URL of the thing you want to link to
-</dd>
+<dt>a</dt>
+<dd>anchor - a link, a bookmark</dd>
+<dt>href</dt>
+<dd>The URL of the thing you want to link to</dd>
 </dl>
-<p>Everything between the &lt;a&gt; and &lt;/a&gt; tags becomes the link.  This could be text, or it could be a picture.  It can include other tags too.</p>
+<p>Everything between the <a> and </a> tags becomes the link.  This could be text, or it could be a picture.  It can include other tags too.</p>
 <p>You can link to other web pages, pictures, movies, or anything else on the internet.  You can even link to email addresses, ftp sites, etc.</p>
-<p>For links on your own website, there&#8217;s no need to include the &#8220;http://www.mysite.com/&#8221; part of the URL.  Any absolute or relative path (remember the <a href="lesson4.html">previous lesson</a>?) will work.</p>
+<p>For links on your own website, there’s no need to include the “http://www.mysite.com/” part of the URL.  Any absolute or relative path (remember the <a href="lesson4.html">previous lesson</a>?) will work.</p>
 <h2>Bookmarks on a page</h2>
-<div class="listingblock">
-<pre><code>&lt;a name="Bookmark1"&gt;&lt;/a&gt;</code></pre>
-</div>
+<pre><code>&lt;a name=&quot;Bookmark1&quot;&gt;&lt;/a&gt;
+</code></pre>
+
 <p>This defines a bookmark on your page.  You can use this to jump down to a particular place on a long page, like this:</p>
-<div class="listingblock">
-<pre><code>&lt;a href="#Bookmark1"&gt;Bookmark 1&lt;/a&gt;</code></pre>
-</div>
+<pre><code>&lt;a href=&quot;#Bookmark1&quot;&gt;Bookmark 1&lt;/a&gt;
+</code></pre>
+
 <p>If you want to get to the bookmark from another page, you use a link like this:</p>
-<div class="listingblock">
-<pre><code>&lt;a href="SomePage.html#Bookmark1"&gt;Bookmark 1 on some page&lt;/a&gt;</code></pre>
-</div>
+<pre><code>&lt;a href=&quot;SomePage.html#Bookmark1&quot;&gt;Bookmark 1 on some page&lt;/a&gt;
+</code></pre>
+
 <h2>Practice</h2>
 <ul>
-<li>
-Make a favourites page, listing your favourite websites.
-</li>
-<li>
-Go back to your resume.  Create bookmarks for each of the second-level headings, and then create a table of contents that links to each of those headings.
-</li>
+<li>Make a favourites page, listing your favourite websites.</li>
+<li>Go back to your resume.  Create bookmarks for each of the second-level headings, and then create a table of contents that links to each of those headings.</li>
 </ul>
 <p><a href="lesson4.html">Previous Lesson</a>
 <a href="index.html">Index</a>
@@ -100,18 +76,25 @@ Go back to your resume.  Create bookmarks for each of the second-level headings,
     </div>
     <div id="foot">
 
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
-    <b>Search:</b>
-    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
-    <input type="hidden" name="cof" value="FORID:10">
-    <input type="text" name="q" size="30">
-    <input type="submit" name="sa" value="Search" class="button">
-    </form>
-    <!-- Google CSE Search Box Ends -->
-<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
-<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Saturday, May 31, 2008</em></p>
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, October  2, 2019 at 09:23:02</em></p>
+<p><em>Last modified: Saturday, September 28, 2019 at 19:44:18</em></p>
 </div>
 </div>
 </body>

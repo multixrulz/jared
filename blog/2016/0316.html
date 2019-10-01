@@ -7,11 +7,10 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="copyright" href="/copyright.html">
 <meta name="description" content="How to set up one type of disk encryption on FreeBSD.">
-<meta name="generator" content="AsciiDoc Website Builder (using AsciiDoc 8.6.9)">
+<meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2005&ndash;2015 Jared Henley">
+<meta name="copyright" content="&copy; 2019 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -19,7 +18,7 @@
     <div id="head">
         <div id="hd2">
             <img class="stretch" src="/img/headbg_gold.png" alt="background">
-            <p>Jared's Blog</p>
+            <p>My blog</p>
             <img id="topimg" src="/img/sunflower.png" alt="nice pic">
         </div>
     </div>
@@ -27,7 +26,6 @@
         <ul>
             <li><a href="/" title="Jared Henley's Website">Home</a></li>
             <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
-            <li><a href="/photos" title="Photos and photography">Photos</a></li>
             <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
             <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
             <li><a href="/software/" title="Software">Software</a></li>
@@ -35,56 +33,58 @@
     </div>
     <div id="trail">
 <ul>
-<li>
-<a href="../../index.html">Jared Henley</a>
-</li>
-<li>
-<a href="../index.html">Jared&#8217;s Blog</a>
-</li>
-<li>
-FreeBSD Disk Encryption
-</li>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/blog/">My blog</a></li>
 </ul>
     </div>
     <div id="content">
-<div class="blogpost">
+
 <h1>FreeBSD Disk Encryption</h1>
-<p>As part of my migration to FreeBSD, I decided I&#8217;d better set up disk encryption from the get-go.  I&#8217;m not too worried about encrypting the software, I&#8217;m more worried about someone getting hold of my laptop in a powered-off state and trawling my personal data for interesting tidbits, like passwords.  The most worrying are email passwords, which are stored in plaintext (or near enough to it) by both claws-mail and pidgin.  But it&#8217;s also quite useful to have emails and other documents protected too.</p>
+<p>As part of my migration to FreeBSD, I decided I’d better set up disk encryption from the get-go.  I’m not too worried about encrypting the software, I’m more worried about someone getting hold of my laptop in a powered-off state and trawling my personal data for interesting tidbits, like passwords.  The most worrying are email passwords, which are stored in plaintext (or near enough to it) by both claws-mail and pidgin.  But it’s also quite useful to have emails and other documents protected too.</p>
 <p>I chose to use the <a href="https://www.freebsd.org/cgi/man.cgi?query=geli&amp;sektion=8&amp;manpath=freebsd-release-ports">geli</a> system, using documentation found <a href="https://www.freebsd.org/doc/handbook/disks-encrypting.html">here</a>.</p>
-<p>Setting this up proved to be ridiculously easy.  I chose not to use a keyfile, but just encrypt the partition with a password.  I&#8217;m not feeling totally paranoid.</p>
+<p>Setting this up proved to be ridiculously easy.  I chose not to use a keyfile, but just encrypt the partition with a password.  I’m not feeling totally paranoid.</p>
 <p>First you initialise a geli-encrypted partition, protected by a password:</p>
-<div class="listingblock">
-<pre><code># geli init -s 4096 /dev/ada0p3</code></pre>
-</div>
+<pre><code># geli init -s 4096 /dev/ada0p3
+</code></pre>
+
 <p>This initialises the partition with a block size of 4kB.  Geli asks for a password.</p>
-<p>Then you get geli to create a new device file, based on the encrypted partition, that&#8217;s unencrypted and upon which a normal filesystem can be created.</p>
-<div class="listingblock">
-<pre><code># geli attach /dev/ada0p3</code></pre>
-</div>
+<p>Then you get geli to create a new device file, based on the encrypted partition, that’s unencrypted and upon which a normal filesystem can be created.</p>
+<pre><code># geli attach /dev/ada0p3
+</code></pre>
+
 <p>Geli asks for the password at this point, and creates <code>/dev/ada0p3.eli</code>, which can be used as the device file for creating a new filesystem.</p>
-<div class="listingblock">
-<pre><code># newfs /dev/ada0p3.eli</code></pre>
-</div>
-<p>Create a filsystem on the encrypted device, and you&#8217;re done.</p>
+<pre><code># newfs /dev/ada0p3.eli
+</code></pre>
+
+<p>Create a filsystem on the encrypted device, and you’re done.</p>
 <p>FreeBSD is smart enough to attach geli-encrypted partitions at boot time, so halfway through the boot process the machine stops and waits for you to enter the password to decrypt the partition.</p>
-<p><em>Posted on Wednesday, March 16, 2016</em></p>
-</div>
-<p><strong><a href="/blog/contents.html">All posts</a></strong></p>
+
+<p class="blogdate">Posted Wednesday, March 16, 2016</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
     </div>
     <div id="foot">
 
-    <!-- Google CSE Search Box Begins  -->
-    <form action="http://jared.henley.id.au/plain/searchresults.html" id="cse-search-box">
-    <b>Search:</b>
-    <input type="hidden" name="cx" value="003221010853661774377:xjzfkw1mw8a">
-    <input type="hidden" name="cof" value="FORID:10">
-    <input type="text" name="q" size="30">
-    <input type="submit" name="sa" value="Search" class="button">
-    </form>
-    <!-- Google CSE Search Box Ends -->
-<p><strong>Copyright &#169; 2005-2015 Jared Henley</strong></p>
-<p>This website is best viewed in a standards-compliant web browser.  It was created using <a href="http://awb.sourceforge.net/">AsciiDoc Website Builder</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.  <a href="/credits.html">Credits</a></p>
-<p><em>Last updated Wednesday, March 16, 2016</em></p>
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, October  2, 2019 at 09:22:48</em></p>
+<p><em>Last modified: Saturday, September 28, 2019 at 19:44:18</em></p>
 </div>
 </div>
 </body>

@@ -1,13 +1,7 @@
-/*h1 {
-color: #611A8E;
-text-shadow: #5f5f5f 4px 3px 4px;
-}
-*/
-
 #awb {
 margin: 0;
 margin-left: -2em; /* Compensate for padding on container */
-margin-bottom: -3.5em; /* Compensate for padding on container */
+margin-bottom: -2em; /* Compensate for padding on container */
 border: 0;
 padding: 0;
 }
