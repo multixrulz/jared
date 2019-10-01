@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Changes to jared.henley.id.au</title>
+<id>http://jared.henley.id.au/atom.xml</id>
+<updated>2019-10-02T09:19:20.263828</updated>
+<entry>
+<link href="http://jared.henley.id.au/atom.xml" />
+<title>/atom.xml</title>
+<summary>"/atom.xml changed on 2019-10-02T07:59:35.239959</summary>
+<updated>2019-10-02T07:59:35.239959</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/atom.xml" />
+<title>/blog/atom.xml</title>
+<summary>"/blog/atom.xml changed on 2019-10-02T07:47:06.722555</summary>
+<updated>2019-10-02T07:47:06.722555</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/index.html" />
+<title>/software/index.html</title>
+<summary>"/software/index.html changed on 2019-10-02T07:45:22.502832</summary>
+<updated>2019-10-02T07:45:22.502832</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<title>/blog/2010/0601.html</title>
+<summary>"/blog/2010/0601.html changed on 2019-10-02T07:40:12.090251</summary>
+<updated>2019-10-02T07:40:12.090251</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2019/0219.html" />
+<title>/blog/2019/0219.html</title>
+<summary>"/blog/2019/0219.html changed on 2019-10-02T07:37:20.452864</summary>
+<updated>2019-10-02T07:37:20.452864</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/geek/linux/index.html" />
+<title>/geek/linux/index.html</title>
+<summary>"/geek/linux/index.html changed on 2019-10-02T07:37:17.772957</summary>
+<updated>2019-10-02T07:37:17.772957</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2019/0218.html" />
+<title>/blog/2019/0218.html</title>
+<summary>"/blog/2019/0218.html changed on 2019-10-02T07:35:26.103492</summary>
+<updated>2019-10-02T07:35:26.103492</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2019/0122.html" />
+<title>/blog/2019/0122.html</title>
+<summary>"/blog/2019/0122.html changed on 2019-10-02T07:34:14.235981</summary>
+<updated>2019-10-02T07:34:14.235981</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2014/1019.html" />
+<title>/blog/2014/1019.html</title>
+<summary>"/blog/2014/1019.html changed on 2019-10-01T19:52:33.241959</summary>
+<updated>2019-10-01T19:52:33.241959</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/0cms-template" />
+<title>/0cms-template</title>
+<summary>"/0cms-template changed on 2019-10-01T19:47:24.915973</summary>
+<updated>2019-10-01T19:47:24.915973</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2014/1026.html" />
+<title>/blog/2014/1026.html</title>
+<summary>"/blog/2014/1026.html changed on 2019-10-01T19:45:07.480734</summary>
+<updated>2019-10-01T19:45:07.480734</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2011/0203.html" />
+<title>/blog/2011/0203.html</title>
+<summary>"/blog/2011/0203.html changed on 2019-10-01T19:44:49.191368</summary>
+<updated>2019-10-01T19:44:49.191368</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/contents.html" />
+<title>/blog/contents.html</title>
+<summary>"/blog/contents.html changed on 2019-09-29T20:59:00.044529</summary>
+<updated>2019-09-29T20:59:00.044529</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/sitemap.xml" />
+<title>/sitemap.xml</title>
+<summary>"/sitemap.xml changed on 2019-09-29T12:12:12.784295</summary>
+<updated>2019-09-29T12:12:12.784295</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/index.html" />
+<title>/blog/index.html</title>
+<summary>"/blog/index.html changed on 2019-09-29T11:54:57.643486</summary>
+<updated>2019-09-29T11:54:57.643486</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/bufe/0cms-template" />
+<title>/software/bufe/0cms-template</title>
+<summary>"/software/bufe/0cms-template changed on 2019-09-28T19:59:32.971562</summary>
+<updated>2019-09-28T19:59:32.971562</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/udevmnt/0cms-template" />
+<title>/software/udevmnt/0cms-template</title>
+<summary>"/software/udevmnt/0cms-template changed on 2019-09-28T19:59:30.274989</summary>
+<updated>2019-09-28T19:59:30.274989</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/wildproxy/0cms-template" />
+<title>/software/wildproxy/0cms-template</title>
+<summary>"/software/wildproxy/0cms-template changed on 2019-09-28T19:59:26.985103</summary>
+<updated>2019-09-28T19:59:26.985103</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/0cms-template" />
+<title>/software/0cms-template</title>
+<summary>"/software/0cms-template changed on 2019-09-28T19:58:53.746254</summary>
+<updated>2019-09-28T19:58:53.746254</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/geek/0cms-template" />
+<title>/geek/0cms-template</title>
+<summary>"/geek/0cms-template changed on 2019-09-28T19:58:51.499665</summary>
+<updated>2019-09-28T19:58:51.499665</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/stuff/0cms-template" />
+<title>/stuff/0cms-template</title>
+<summary>"/stuff/0cms-template changed on 2019-09-28T19:58:19.750765</summary>
+<updated>2019-09-28T19:58:19.750765</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/stuff/index.html" />
+<title>/stuff/index.html</title>
+<summary>"/stuff/index.html changed on 2019-09-28T19:44:19.309879</summary>
+<updated>2019-09-28T19:44:19.309879</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/wildproxy/index.html" />
+<title>/software/wildproxy/index.html</title>
+<summary>"/software/wildproxy/index.html changed on 2019-09-28T19:44:19.289880</summary>
+<updated>2019-09-28T19:44:19.289880</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/udevmnt/index.html" />
+<title>/software/udevmnt/index.html</title>
+<summary>"/software/udevmnt/index.html changed on 2019-09-28T19:44:19.279880</summary>
+<updated>2019-09-28T19:44:19.279880</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/revelation/index.html" />
+<title>/software/revelation/index.html</title>
+<summary>"/software/revelation/index.html changed on 2019-09-28T19:44:19.263214</summary>
+<updated>2019-09-28T19:44:19.263214</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/photo-shrink/index.html" />
+<title>/software/photo-shrink/index.html</title>
+<summary>"/software/photo-shrink/index.html changed on 2019-09-28T19:44:19.226549</summary>
+<updated>2019-09-28T19:44:19.226549</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/lifequest/index.html" />
+<title>/software/lifequest/index.html</title>
+<summary>"/software/lifequest/index.html changed on 2019-09-28T19:44:19.216549</summary>
+<updated>2019-09-28T19:44:19.216549</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/giveback.html" />
+<title>/software/giveback.html</title>
+<summary>"/software/giveback.html changed on 2019-09-28T19:44:19.199883</summary>
+<updated>2019-09-28T19:44:19.199883</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/fontfinder/index.html" />
+<title>/software/fontfinder/index.html</title>
+<summary>"/software/fontfinder/index.html changed on 2019-09-28T19:44:19.189883</summary>
+<updated>2019-09-28T19:44:19.189883</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/bufe/index.html" />
+<title>/software/bufe/index.html</title>
+<summary>"/software/bufe/index.html changed on 2019-09-28T19:44:19.176550</summary>
+<updated>2019-09-28T19:44:19.176550</updated>
+</entry>
+</feed>
