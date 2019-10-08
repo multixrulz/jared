@@ -2,7 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Changes to jared.henley.id.au</title>
 <id>http://jared.henley.id.au/atom.xml</id>
-<updated>2019-10-02T09:22:43.117175</updated>
+<updated>2019-10-08T12:41:04.698023</updated>
+<entry>
+<link href="http://jared.henley.id.au/0cms-template" />
+<title>/0cms-template</title>
+<summary>"/0cms-template changed on 2019-10-08T12:40:57.008485</summary>
+<updated>2019-10-08T12:40:57.008485</updated>
+</entry>
 <entry>
 <link href="http://jared.henley.id.au/atom.xml" />
 <title>/atom.xml</title>
@@ -56,12 +62,6 @@
 <title>/blog/2014/1019.html</title>
 <summary>"/blog/2014/1019.html changed on 2019-10-01T19:52:33.241959</summary>
 <updated>2019-10-01T19:52:33.241959</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/0cms-template" />
-<title>/0cms-template</title>
-<summary>"/0cms-template changed on 2019-10-01T19:47:24.915973</summary>
-<updated>2019-10-01T19:47:24.915973</updated>
 </entry>
 <entry>
 <link href="http://jared.henley.id.au/blog/2014/1026.html" />
