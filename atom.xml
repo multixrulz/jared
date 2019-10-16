@@ -2,7 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Changes to jared.henley.id.au</title>
 <id>http://jared.henley.id.au/atom.xml</id>
-<updated>2019-10-08T12:41:04.698023</updated>
+<updated>2019-10-16T18:02:18.048684</updated>
+<entry>
+<link href="http://jared.henley.id.au/css/layout.css" />
+<title>/css/layout.css</title>
+<summary>"/css/layout.css changed on 2019-10-16T18:02:00.321303</summary>
+<updated>2019-10-16T18:02:00.321303</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/contents.html" />
+<title>/blog/contents.html</title>
+<summary>"/blog/contents.html changed on 2019-10-12T20:06:36.781438</summary>
+<updated>2019-10-12T20:06:36.781438</updated>
+</entry>
 <entry>
 <link href="http://jared.henley.id.au/0cms-template" />
 <title>/0cms-template</title>
@@ -74,12 +86,6 @@
 <title>/blog/2011/0203.html</title>
 <summary>"/blog/2011/0203.html changed on 2019-10-01T19:44:49.191368</summary>
 <updated>2019-10-01T19:44:49.191368</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/blog/contents.html" />
-<title>/blog/contents.html</title>
-<summary>"/blog/contents.html changed on 2019-09-29T20:59:00.044529</summary>
-<updated>2019-09-29T20:59:00.044529</updated>
 </entry>
 <entry>
 <link href="http://jared.henley.id.au/sitemap.xml" />
@@ -176,11 +182,5 @@
 <title>/software/fontfinder/index.html</title>
 <summary>"/software/fontfinder/index.html changed on 2019-09-28T19:44:19.189883</summary>
 <updated>2019-09-28T19:44:19.189883</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/software/bufe/index.html" />
-<title>/software/bufe/index.html</title>
-<summary>"/software/bufe/index.html changed on 2019-09-28T19:44:19.176550</summary>
-<updated>2019-09-28T19:44:19.176550</updated>
 </entry>
 </feed>

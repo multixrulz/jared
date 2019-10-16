@@ -211,6 +211,7 @@ margin: 1em 0 1em 0;
 padding: 0.5em;
 border: solid #C3EB8D;
 border-width: 0 0 0 0.2em;
+white-space: pre-wrap;
 }
 pre code {
 padding: 0;
