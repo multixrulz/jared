@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Udevil &amp; systemd</title>
+<title>Raspberry Pi video output</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<meta name="description" content="Setting up udevil with systemd to replace udevmnt">
+<meta name="description" content="How to tweak Raspberry Pi's video output.">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2020 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div id="head">
         <div id="hd2">
             <img class="stretch" src="/img/headbg_gold.png" alt="background">
-            <p>Geeky Stuff</p>
+            <p>My blog</p>
             <img id="topimg" src="/img/sunflower.png" alt="nice pic">
         </div>
     </div>
@@ -34,36 +34,18 @@
     <div id="trail">
 <ul>
 <li><a href="/">Jared Henley</a></li>
-<li><a href="/geek/">Geeky Stuff</a></li>
+<li><a href="/blog/">My blog</a></li>
 </ul>
     </div>
     <div id="content">
-<h1>Udevil &amp; systemd</h1>
-<p>Systemd broke my USB mounting scripts!  Fortunately udevil and devmon are a wonderful replacement.</p>
-<p>The way I like USB mounting to work is as follows:</p>
-<ul>
-<li>USB storage devices are mounted at /media/filesystem-label</li>
-<li>Mountpoints are created with the &ldquo;storage&rdquo; group, to allow access to all users in that group.</li>
-<li>All users get write access to the mount point</li>
-<li>I can specify the mount options I want, especially FAT-based filesystems and NTFS (for fmask/dmask and filename conversion)</li>
-<li>Devices get mounted when nobody’s logged in.</li>
-</ul>
-<p>Udevil already does a lot of this already with its default configuration.  Here’s what I did to finish the job.</p>
-<p><em>Allow write access to members of the mountpoint group (ie storage group)</em></p>
-<pre><code>- In /etc/udevil/udevil.conf change the fmask and dmask options to +fmask=0002+ and +dmask=0002+ for the filesystems that have them specified.
-- In /etc/udevil/udevil.conf change the allowed fmask and dmask options to +fmask=0002+ and +dmask=0002+
-- In /etc/udevil/udevil.conf change the mount point mode to 0775
-</code></pre>
-<p><em>Devmon is shipped with udevil, and it comes with a systemd unit file.</em></p>
-<p>First, create a devmon user to run devmon under.</p>
-<pre><code># useradd -g storage -M -u 300 devmon
-# usermod -L devmon
-</code></pre>
 
-<p>Enable and start devmon (the unit file is named devmon@ and requires a username after the @)</p>
-<pre><code># systemctl enable devmon@devmon
-# systemctl start devmon@devmon
-</code></pre>
+<h1>Raspberry Pi video output</h1>
+<p>I’m in the process of setting up a Raspberry Pi as a media PC.  The GUI configuration panel doesn’t contain a setting for the pixel format — I want to use the whole 8 bits and get proper blacks and whites — and /boot/config.txt wasn’t helping either, as Raspbian Noobs hasn’t put all the possible variables in there.  It’s documented <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md">here</a>.  The variable in question is <code>hdmi_pixel_encoding</code>.</p>
+
+<p class="blogdate">Posted Sunday, November 24, 2019</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
     </div>
     <div id="foot">
 
@@ -81,11 +63,11 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:09</em></p>
-<p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
+<p><em>Last built: Tuesday, January  7, 2020 at 16:31:13</em></p>
+<p><em>Last modified: Monday, November 25, 2019 at 16:05:13</em></p>
 </div>
 </div>
 </body>

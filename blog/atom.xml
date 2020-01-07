@@ -2,185 +2,185 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Jared's Blog</title>
 <id>http://jared.henley.id.au/blog/atom.xml</id>
-<updated>2019-10-08T12:41:04.446627</updated>
+<updated>2020-01-07T16:31:13.746698</updated>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
+<title>NetworkManager problems</title>
+<summary>How I solved NetworkManager suddenly not configuring DHCP and DNS</summary>
+<updated>2020-01-07T16:30:54.236262</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
+<title>Raspberry Pi video output</title>
+<summary>How to tweak Raspberry Pi's video output.</summary>
+<updated>2019-11-25T16:05:13.233484</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Record my desktop with ffmpeg</title>
 <summary>Since I haven’t found a foolproof GUI program, I decided to try the command-line.</summary>
-<updated>2019-10-02T07:37:20.452864</updated>
+<updated>2019-10-02T16:06:43.393975</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Find and replace in geany</title>
 <summary>Getting it to work with regexes.</summary>
-<updated>2019-10-02T07:35:26.103492</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Getting Void Linux to work right</title>
 <summary>The business of getting nonfunctional stuff to work.</summary>
-<updated>2019-10-02T07:34:14.235981</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Entering the Void</title>
 <summary>Or, my experiment with Void Linux.</summary>
-<updated>2019-09-28T19:44:18.579904</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Removing gvfs</title>
 <summary>It is possible (at least on my systems) to remove gvfs.</summary>
-<updated>2019-09-28T19:44:18.569905</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Disk Encryption in Linux</title>
 <summary>Setting up disk encryption in Linux</summary>
-<updated>2019-09-28T19:44:18.559905</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>FreeBSD Disk Encryption</title>
 <summary>How to set up one type of disk encryption on FreeBSD.</summary>
-<updated>2019-09-28T19:44:18.539906</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Up close and personal with FreeBSD</title>
 <summary>My first experience setting up FreeBSD</summary>
-<updated>2019-09-28T19:44:18.533239</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Brickmaster Website</title>
 <summary>[Brick master J.N.H](http://brickmaster.henley.id.au/)</summary>
-<updated>2019-09-28T19:44:18.516573</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser -- the verdict</title>
 <summary>My search is over, and the winner is …</summary>
-<updated>2019-09-28T19:44:18.496574</updated>
+<updated>2019-09-29T15:49:23.217474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser: RapydScript</title>
 <summary>Today I'm looking at [RapydScript](http://www.pyjeon.com/RapydScript/)</summary>
-<updated>2019-09-28T19:44:18.489908</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser: Brython</title>
 <summary>Today I'm looking at [Brython](http://www.brython.info/)</summary>
-<updated>2019-09-28T19:44:18.473241</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser: Skulpt</title>
 <summary>Today I'm looking at [skulpt](http://www.skulpt.org/)</summary>
-<updated>2019-09-28T19:44:18.459908</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser: Pyjs</title>
 <summary>Today I'm taking a look at the first contender: [Pyjs](http://pyjs.org)</summary>
-<updated>2019-09-28T19:44:18.453242</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Python in the Browser</title>
 <summary>Which option is best for developing my browser-based programs in python?</summary>
-<updated>2019-09-28T19:44:18.439909</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Open Source Cake Mix</title>
 <summary>I was quite intrigued the other day to find a cake mix with the recipe printed on it.</summary>
-<updated>2019-10-01T19:45:07.480734</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Reprogramming the MaKey Makey</title>
 <summary>Getting different keycodes out of the thing.</summary>
-<updated>2019-10-01T19:52:33.241959</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Lunar Eclipse, October 8, 2014</title>
 <summary>On October 8, 2014 there will be a total lunar eclipse.</summary>
-<updated>2019-09-28T19:44:18.413244</updated>
+<updated>2019-09-29T15:49:23.210807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Making sshfs friendlier</title>
 <summary>I've wanted to make a nice friendly front-end to sshfs and various other mount-related programs for a while.</summary>
-<updated>2019-09-28T19:44:18.399910</updated>
+<updated>2019-09-29T15:49:23.207474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Microsoft Outloo...</title>
 <summary>I had quite a frustrating time today with some email.</summary>
-<updated>2019-10-01T19:44:49.191368</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Removing GNOME</title>
 <summary>I’ve been getting annoyed by evince because it’s forgotton how to remember things, so I decided to blame gconf and evict it from my system.</summary>
-<updated>2019-10-02T07:40:12.090251</updated>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>AWB -- Asciidoc Website Builder -- is Go!</title>
 <summary>I've built my own website building tool, so I don't have to spend so much time fussing around with this stuff.</summary>
-<updated>2019-09-28T19:44:18.376578</updated>
+<updated>2019-09-29T15:49:23.207474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>The Ideal Job</title>
 <summary>Forget looking for the perfect, exciting, full-on passionate job.  Just find something that doesn't suck too much and pays the bills.</summary>
-<updated>2019-09-28T19:44:18.366578</updated>
+<updated>2019-09-29T15:49:23.207474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>I'm a casualty in the Israeli-Lebanese conflict</title>
 <summary>This time my web host has been attacked by some people upset about the latest war.</summary>
-<updated>2019-09-28T19:44:18.356579</updated>
+<updated>2019-09-29T15:49:23.200807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Passion Driven</title>
 <summary>Someone got so excited by this book that they left a copy in everyone's mail box.</summary>
-<updated>2019-09-28T19:44:18.349912</updated>
+<updated>2019-09-29T15:49:23.200807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Idiot!</title>
 <summary>Words for idiots.  Why doesn English have so many of them?</summary>
-<updated>2019-09-28T19:44:18.336579</updated>
+<updated>2019-09-29T15:49:23.200807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>Nokia service sucks</title>
 <summary>I had a fairly negative experience with Nokia: two dead phones (brand-new), and poor service.</summary>
-<updated>2019-09-28T19:44:18.323246</updated>
+<updated>2019-09-29T15:49:23.200807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
 <title>A plug for MemoryX</title>
 <summary>I've actually had good service from a company!  Worth cheering about.</summary>
-<updated>2019-09-28T19:44:18.316580</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
-<title>Eden's Not So Hot</title>
-<summary>We live in Eden.  That's the name of our building, but it's not quite paradise...</summary>
-<updated>2019-09-28T19:44:18.306581</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/blog/2010/0601.html" />
-<title>Chinglish!</title>
-<summary>Reading English written by people who don't know it very well is always rather funny.</summary>
-<updated>2019-09-28T19:44:18.289914</updated>
+<updated>2019-09-29T15:49:23.200807</updated>
 </entry>
 </feed>

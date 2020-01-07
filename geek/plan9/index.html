@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Udevil &amp; systemd</title>
+<title>Plan9</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<meta name="description" content="Setting up udevil with systemd to replace udevmnt">
+<meta name="description" content="Using Plan9">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2020 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -38,32 +38,10 @@
 </ul>
     </div>
     <div id="content">
-<h1>Udevil &amp; systemd</h1>
-<p>Systemd broke my USB mounting scripts!  Fortunately udevil and devmon are a wonderful replacement.</p>
-<p>The way I like USB mounting to work is as follows:</p>
-<ul>
-<li>USB storage devices are mounted at /media/filesystem-label</li>
-<li>Mountpoints are created with the &ldquo;storage&rdquo; group, to allow access to all users in that group.</li>
-<li>All users get write access to the mount point</li>
-<li>I can specify the mount options I want, especially FAT-based filesystems and NTFS (for fmask/dmask and filename conversion)</li>
-<li>Devices get mounted when nobody’s logged in.</li>
-</ul>
-<p>Udevil already does a lot of this already with its default configuration.  Here’s what I did to finish the job.</p>
-<p><em>Allow write access to members of the mountpoint group (ie storage group)</em></p>
-<pre><code>- In /etc/udevil/udevil.conf change the fmask and dmask options to +fmask=0002+ and +dmask=0002+ for the filesystems that have them specified.
-- In /etc/udevil/udevil.conf change the allowed fmask and dmask options to +fmask=0002+ and +dmask=0002+
-- In /etc/udevil/udevil.conf change the mount point mode to 0775
-</code></pre>
-<p><em>Devmon is shipped with udevil, and it comes with a systemd unit file.</em></p>
-<p>First, create a devmon user to run devmon under.</p>
-<pre><code># useradd -g storage -M -u 300 devmon
-# usermod -L devmon
-</code></pre>
-
-<p>Enable and start devmon (the unit file is named devmon@ and requires a username after the @)</p>
-<pre><code># systemctl enable devmon@devmon
-# systemctl start devmon@devmon
-</code></pre>
+<h1>Plan9</h1>
+<p>What is Plan9?  When you’ve found out, come back here and start reading.</p>
+<h2>The Basics — I’m a n00b and don’t know anything</h2>
+<p>Plan9 is kinda like Unix.  But it’s different enough that you won’t work out very much by yourself.  I figure that if I make a list of stuff I’ve learned as I’m learning it, it’ll be a great starting point for other n00bs.</p>
     </div>
     <div id="foot">
 
@@ -81,11 +59,11 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:09</em></p>
-<p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
+<p><em>Last built: Tuesday, January  7, 2020 at 16:31:14</em></p>
+<p><em>Last modified: Friday, November 22, 2019 at 17:48:50</em></p>
 </div>
 </div>
 </body>

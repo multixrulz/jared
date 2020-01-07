@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2020 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -38,6 +38,28 @@
 </ul>
     </div>
     <div id="content">
+<h1>NetworkManager problems</h1>
+<p>Just recently, probably after a system upgrade, my work laptop stopped configuring the WiFi interface properly.  Manual settings worked, but DHCP and name resolution were broken more often than not.  Having to manually running dhcpcd was not impressing me.</p>
+<p>I came across <a href="https://bugs.archlinux.org/task/61738">these</a> <a href="https://bugs.archlinux.org/task/62138">bugs</a> in the Arch bugtracker that were informative.</p>
+<p>I don’t know if the machine has gone crazy or if something recently changed in the NetworkManager / systemd worlds.  I have disabled systemd-resolved since I don’t see why systemd should be replacing name resolution, so that might be causing trouble.  The following fixes it.</p>
+<p>First, add this to <code>/etc/NetworkManager/NetworkManager.conf</code>:</p>
+<pre><code>[main]
+systemd-resolved=false
+</code></pre>
+
+<p>This adding the following to <code>/etc/NetworkManager/conf.d/dhcp-client.conf</code> may also be required, although the lack of it isn’t currently causing me problems:</p>
+<pre><code>[main]
+dhcp=dhcpcd
+</code></pre>
+
+<p>Finally, enable dhcpcd:</p>
+<pre><code>% sudo systemctl enable dhcpcd
+% sydo systemctl start dhcpcd
+</code></pre>
+<p class="blogdate">Posted Tuesday, January  7, 2020</p>
+<h1>Raspberry Pi video output</h1>
+<p>I’m in the process of setting up a Raspberry Pi as a media PC.  The GUI configuration panel doesn’t contain a setting for the pixel format — I want to use the whole 8 bits and get proper blacks and whites — and /boot/config.txt wasn’t helping either, as Raspbian Noobs hasn’t put all the possible variables in there.  It’s documented <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md">here</a>.  The variable in question is <code>hdmi_pixel_encoding</code>.</p>
+<p class="blogdate">Posted Sunday, November 24, 2019</p>
 <h1>Record my desktop with ffmpeg</h1>
 <p>It seems that desktop recording is quite the pest.  Not that I’ve tried much, but I also haven’t really found a &ldquo;go-to&rdquo; piece of software for X11 that just does it.  So the last time I wanted to record my screen, I decided to have a go with just plain command-line tools.</p>
 <p>It turns out that this is also ridiculously easy.</p>
@@ -115,27 +137,6 @@ end
 
 <p>This typically starts devmon when I log in, and logging out should kill it.</p>
 <p class="blogdate">Posted Tuesday, January 22, 2019</p>
-<h1>Entering the Void</h1>
-<p>Or, my experiment with Void Linux.</p>
-<p>With a 32-bit computer and ArchLinux now 64-bit only, it’s time to try something that will run on the old CPU.  I picked Void Linux because it’s very basic (like Arch), and doesn’t have systemd.  I’m not a great fan of systemd, in part because of the usual complaints, but moreso because it is another milestone on the road to ruining everything that was good about Linux (ie, user control over the system &ndash; most distros seem to have this big blob (or set of big blobs) in the middle that are hard to figure out and not very modular).</p>
-<p>The void installer was very good.  So good, in fact, that there’s nothing to report.  It just got the job done.</p>
-<p>The next step was to configure /etc/crypttab to unlock my encrypted /home partition.  That was also simplicity itself.</p>
-<p>Void Linux is very Arch-like in many ways.  The main thing to do was to get extra packages to have a working system.  Are there any issues?</p>
-<ul>
-<li>
-<p>I had a little trouble with NetworkManager.  First, it required dbus, no surprise there, but I had to tell it to run myself (hooray!).  Second, there was some kind of issue with filesystem permissions to delete connections, but that resolved itself with either a reboot or adding myself to an appropriate group (no idea which one that was, though).</p>
-</li>
-<li>
-<p>XFCE4 still doesn’t show a proper logout menu.  The restart and shutdown icons are greyed, and the suspend-to-RAM and hibernate buttons don’t show at all.  This is a typical problem with learning a new distro.  I’ll solve that later.</p>
-</li>
-</ul>
-<p>So far that seems to be it.</p>
-<p class="blogdate">Posted Thursday, January 17, 2019</p>
-<h1>Removing gvfs</h1>
-<p>It is possible (at least on my systems) to remove gvfs.  Why do this?  Well it doesn’t do anything useful for me, and it does leave processes lying around after logout.  One time it even held open files on a USB drive, which is a real pest when you want to remove it.</p>
-<p>Getting rid of gvfs turned out to be really easy.  Nothing I use depends on it, although there are some optional dependencies.  Nothing I’ve been used to has stopped working, either.</p>
-<p>Now if I can get rid of those other non-dying processes&hellip;</p>
-<p class="blogdate">Posted Monday, December  5, 2016</p>
 <p><a href="/blog/contents.html">Blog contents</a></p>
     </div>
     <div id="foot">
@@ -154,11 +155,11 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October  8, 2019 at 12:41:06</em></p>
-<p><em>Last modified: Sunday, September 29, 2019 at 11:54:57</em></p>
+<p><em>Last built: Tuesday, January  7, 2020 at 16:31:13</em></p>
+<p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>
 </body>
