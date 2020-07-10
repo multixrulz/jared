@@ -2,7 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Changes to jared.henley.id.au</title>
 <id>http://jared.henley.id.au/atom.xml</id>
-<updated>2020-01-22T13:15:09.877485</updated>
+<updated>2020-07-10T10:33:25.460638</updated>
+<entry>
+<link href="http://jared.henley.id.au/blog/2019/0218.html" />
+<title>/blog/2019/0218.html</title>
+<summary>"/blog/2019/0218.html" changed on 2020-07-02T15:05:34.297140</summary>
+<updated>2020-07-02T15:05:34.297140</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/blog/atom.atom" />
+<title>/blog/atom.atom</title>
+<summary>"/blog/atom.atom" changed on 2020-04-04T13:33:29.721097</summary>
+<updated>2020-04-04T13:33:29.721097</updated>
+</entry>
 <entry>
 <link href="http://jared.henley.id.au/atom.xml" />
 <title>/atom.xml</title>
@@ -32,12 +44,6 @@
 <title>/blog/2019/1124.html</title>
 <summary>"/blog/2019/1124.html" changed on 2019-11-25T16:05:13.233484</summary>
 <updated>2019-11-25T16:05:13.233484</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/geek/plan9/index.html" />
-<title>/geek/plan9/index.html</title>
-<summary>"/geek/plan9/index.html" changed on 2019-11-22T17:48:50.290072</summary>
-<updated>2019-11-22T17:48:50.290072</updated>
 </entry>
 <entry>
 <link href="http://jared.henley.id.au/geek/index.html" />
@@ -76,12 +82,6 @@
 <updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/blog/2019/0218.html" />
-<title>/blog/2019/0218.html</title>
-<summary>"/blog/2019/0218.html" changed on 2019-10-02T16:06:43.397308</summary>
-<updated>2019-10-02T16:06:43.397308</updated>
-</entry>
-<entry>
 <link href="http://jared.henley.id.au/blog/2014/1019.html" />
 <title>/blog/2014/1019.html</title>
 <summary>"/blog/2014/1019.html" changed on 2019-10-02T16:06:43.397308</summary>
@@ -109,12 +109,6 @@
 <link href="http://jared.henley.id.au/blog/2019/0219.html" />
 <title>/blog/2019/0219.html</title>
 <summary>"/blog/2019/0219.html" changed on 2019-10-02T16:06:43.393975</summary>
-<updated>2019-10-02T16:06:43.393975</updated>
-</entry>
-<entry>
-<link href="http://jared.henley.id.au/blog/atom.xml" />
-<title>/blog/atom.xml</title>
-<summary>"/blog/atom.xml" changed on 2019-10-02T16:06:43.393975</summary>
 <updated>2019-10-02T16:06:43.393975</updated>
 </entry>
 <entry>
@@ -181,6 +175,12 @@
 <link href="http://jared.henley.id.au/software/udevmnt/0cms-template" />
 <title>/software/udevmnt/0cms-template</title>
 <summary>"/software/udevmnt/0cms-template" changed on 2019-09-29T15:49:23.267474</summary>
+<updated>2019-09-29T15:49:23.267474</updated>
+</entry>
+<entry>
+<link href="http://jared.henley.id.au/software/revelation/index.html" />
+<title>/software/revelation/index.html</title>
+<summary>"/software/revelation/index.html" changed on 2019-09-29T15:49:23.267474</summary>
 <updated>2019-09-29T15:49:23.267474</updated>
 </entry>
 </feed>
