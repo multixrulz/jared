@@ -10,7 +10,7 @@
 <meta name="description" content="I've wanted to make a nice friendly front-end to sshfs and various other mount-related programs for a while.">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -46,7 +46,6 @@
 <p>Solving this took quite a while, particularly since I wasn’t about to install and learn `screen’ or some other program for such a trivial task, and other ideas like double-forking were a wild goose chase.  In the end it looks like this:</p>
 <pre><code>bash -c ’trap &quot;&quot; SIGHUP &amp;&amp; sshfs user@machine:/some/path /home/me/sshfs &amp;&amp; rox /home/me/sshfs’
 </code></pre>
-
 <p>Bash is used to put the rest of the commandline into a new shell.  Then `trap’ traps the SIGHUP signal that’s normally sent to the process when its pty disappears, the sshfs command is run, and the mountpoint is opened in a file manager window for good measure.</p>
 
 <p class="blogdate">Posted Tuesday, June 19, 2012</p>
@@ -70,10 +69,10 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:06</em></p>
+<p><em>Last built: Wednesday, June 23, 2021 at 10:12:02</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>

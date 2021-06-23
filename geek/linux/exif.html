@@ -10,7 +10,7 @@
 <meta name="description" content="Manipulating exif information (found in digital photos) under Linux.">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -54,43 +54,34 @@
 <p>Rotate 270 degrees (ie anti-clockwise):</p>
 <pre><code>% exiftran -2 -o rotated.jpg original.jpg
 </code></pre>
-
 <p>Rotate 180 degrees</p>
 <pre><code>% exiftran -1 -o rotated.jpg original.jpg
 </code></pre>
-
 <p>Rotate 90 degrees (ie clockwise)</p>
 <pre><code>% exiftran -9 -o rotated.jpg original.jpg
 </code></pre>
-
 <p>And the one I like the best:</p>
 <p>Rotate automatically based on the exif rotation tag</p>
 <pre><code>% exiftran -a -o rotated.jpg original.jpg
 </code></pre>
-
 <p>Exiftran can also fix up the mess jpegtran left behind, by using the -ni switch (to not rotate the jpeg, but still rotate the thumbnail and update the rotation tag).  The -i switch tells exiftran to write the rotated image out to the original filename, and -p tells it to keep the original mtime when using -i.  Someday I may stop using gqview for rotation altogether, and simply do</p>
 <pre><code>% exiftran -aip *.jpg
 </code></pre>
-
 <h2>exiv2</h2>
 <p><a href="http://www.exiv2.org/">Exiv2</a> is a program and library for manipulating the exif header.  And it doesn’t just work on jpegs, but on any file with exif, such as TIFFs and RAW files.  exiv2 is a complicated beast.  The options to solve my problems are:</p>
 <p>Set the mtime of the file to the exif creation time (like the old jhead -ft did).</p>
 <pre><code>% exiv2 mv -T abc.jpg
 </code></pre>
-
 <p>Copy the exif headers from the Nikon RAW files in /tmp to the correspondingly named jpegs in /data.  Not all the exif data makes sense, since the RAW file has been converted to a jpeg, but as far as I’m concerned, it’s close enough.  I mostly need the time, and possibly the aperture and shutter speed etc., and that’s all still valid.</p>
 <pre><code>% exiv2 in -k -l /tmp -S .nef /data/*.jpg
 </code></pre>
-
 <p>Remove exif headers from the jpeg file.</p>
 <pre><code>% exiv2 rm *.jpg
 </code></pre>
-
 <h2>Hex Editor</h2>
 <p>Neither jhead nor exiv2 can cope with the timestamp used by one of my cameras when the camera’s date hasn’t been set.  I have this problem because somehow the camera forgot the date and time and took a bunch of photos without them.  As a result I’ve been getting this message:</p>
 <pre><code>Failed to parse or convert timestamp +0000:00:00 00:00:00
 </code></pre>
-
 <p>Goodness knows why none of these programs can only adjust the date, rather than <em>setting</em> it.  Anyway, I’ve been able to solve the problem using a hex editor.  Thankfully the timestamps (there are 3 of them) are quite easily found and edited in plain text.</p>
     </div>
     <div id="foot">
@@ -109,10 +100,10 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:09</em></p>
+<p><em>Last built: Wednesday, June 23, 2021 at 10:12:04</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>

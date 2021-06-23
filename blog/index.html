@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2020 Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -38,6 +38,33 @@
 </ul>
     </div>
     <div id="content">
+<h1>Replacing a disk in a BTRFS RAID1 configuration</h1>
+<p>When your hard drive starts making the clicking sound of death, it&rsquo;s time to act.</p>
+<ol>
+<li>Get a new hard drive.</li>
+<li>Run a BTRFS scrub, using <code>btrfs scrub status -d /home</code> to show which drive had the errors (and also to ensure that any errors were corrected on the good disk)</li>
+<li>Work out which hard drive is at fault.  I had the following information:<ul>
+<li><code>/dev/mapper/home2</code> from BTRFS - this one had errors during a scrub, too.</li>
+<li><code>ata2</code> from the kernel message log - the ATA interface kept getting reset.</li>
+<li><code>/dev/sdb</code> from GSmartControl - this was the drive with reallocated sectors.</li>
+<li>Verify using <code>blkid</code> that the UUID for /dev/sdb was the same as the UUID for home2 in <code>/etc/crypttab</code>.</li>
+</ul>
+</li>
+<li>Locate the physical drive.  I was able to do this by following SATA cables to the various drives in the system and figuring out the ATA IDs for each SATA port.</li>
+<li>Put the new drive into the DVD drive position.  (This is probably easier than having to replace a physically removed drive).</li>
+<li>Partition the new drive.  Ensure you use the same tools, or at least end up with <em>exactly</em> the same partition table.  That bit me.</li>
+<li><a href="/blog/2016/0427.html">Set up crypto</a> on the new drive</li>
+<li>Open the encrypted partition with a different name (e.g. home3).  You can end up using the original name, but not while the original drive is mounted.</li>
+<li>Add the new drive to the BTRFS RAID array by replacing the old one.<ul>
+<li>Execute <code>btrfs filesystem show /home</code> and find the devid.</li>
+<li><code>btrfs replace start &lt;devid&gt; /dev/mapper/home3 /home</code></li>
+<li><code>btrfs replace status /home</code> and watch it progress.</li>
+</ul>
+</li>
+<li>While that’s going, write a blog entry and also update <code>/etc/crypttab</code> and <code>/etc/fstab</code> to use the new drive.  Probably should use the <code>nofail</code> mount option in case you make a mistake, so the system still boots into a nice environment.</li>
+<li>When it&rsquo;s all done, remove the old drive.</li>
+</ol>
+<p class="blogdate">Posted Friday, June 18, 2021</p>
 <h1>NetworkManager problems</h1>
 <p>Just recently, probably after a system upgrade, my work laptop stopped configuring the WiFi interface properly.  Manual settings worked, but DHCP and name resolution were broken more often than not.  Having to manually running dhcpcd was not impressing me.</p>
 <p>I came across <a href="https://bugs.archlinux.org/task/61738">these</a> <a href="https://bugs.archlinux.org/task/62138">bugs</a> in the Arch bugtracker that were informative.</p>
@@ -46,12 +73,10 @@
 <pre><code>[main]
 systemd-resolved=false
 </code></pre>
-
 <p>This adding the following to <code>/etc/NetworkManager/conf.d/dhcp-client.conf</code> may also be required, although the lack of it isn’t currently causing me problems:</p>
 <pre><code>[main]
 dhcp=dhcpcd
 </code></pre>
-
 <p>Finally, enable dhcpcd:</p>
 <pre><code>% sudo systemctl enable dhcpcd
 % sydo systemctl start dhcpcd
@@ -65,7 +90,6 @@ dhcp=dhcpcd
 <p>It turns out that this is also ridiculously easy.</p>
 <pre><code>ffmpeg -f x11grab -s 500x300 -r 25 -i :0.0 foo.mp4
 </code></pre>
-
 <p>The -s option tells ffmpeg the pixel size of the region you want to grab; -r is the frame rate, -i is your X screen, and the video is written to foo.mp4.</p>
 <p>If you don’t want to start the screen capture in the top-left, just use something like <code>-i :0.0+100,200</code> to specify where to start and the resolution to capture.</p>
 <p>The <a href="https://trac.ffmpeg.org/wiki/Capture/Desktop">ffmpeg website</a> has more info.</p>
@@ -74,69 +98,17 @@ dhcp=dhcpcd
 <p>The other day I wanted to do a find-and-replace in <a href="http://www.geany.org/">geany</a> using a regex in the find.  I wanted to turn something like this</p>
 <pre><code>Field name: value
 </code></pre>
-
 <p>into</p>
 <pre><code>Field name: value plus some more
 </code></pre>
-
 <p>Since geany supports regex searching, I decided it was time to find out how to do regex replacements too.  The way it works, is that you put parentheses around each match that you want to be able to use in the replacement string, and then reference these replacements using backslash-number.  So the find string becomes</p>
 <pre><code>^Field name: (.*)
 </code></pre>
-
 <p>and the replacement string becomes</p>
 <pre><code>Field name: \1 plus some more
 </code></pre>
-
 <p>That was too easy.</p>
 <p class="blogdate">Posted Monday, February 18, 2019</p>
-<h1>Getting Void Linux to work right</h1>
-<p>My experiment with Void Linux started very well.  There was the usual round of installing all the packages I needed to make the computer useful, and then there was the business of getting nonfunctional stuff to work.  Being that Void doesn’t modify packages, this was also an educational experience.</p>
-<h2>The trackpad</h2>
-<p>The trackpad on this computer was tracking too slowly for my liking.  I don’t know if it was due to Arch/Void differences, or just changes in xorg, but it really doesn’t matter.</p>
-<p>I didn’t want to fix this with an X configuration file, primarily because it doesn’t live in my home directory and is thus vulnerable to disappearing with an OS install.</p>
-<p>I discovered xinput, which allows you to query and set various input-related settings in a running X server.</p>
-<p>To get a list of input devices:</p>
-<pre><code>xinput
-</code></pre>
-
-<p>To see the available properties of a device (use the device name reported above):</p>
-<pre><code>xinput list-props &lt;device name&gt;
-</code></pre>
-
-<p>To set a property:</p>
-<pre><code>xinput set-prop &quot;ETPS/2 Elantech Touchpad&quot; 287 1
-</code></pre>
-
-<p>where &ldquo;ETPS/2 Elantech Touchpad&rdquo; is the device name, 287 is the number of the property to set, and 1 is the value I want there.</p>
-<p>I run this in .xinitrc before starting xfce4.</p>
-<h2>X display settings</h2>
-<p>I discovered the wonders of xrandr some time ago, but it’s worth documenting.  With a laptop, you (or at least I) frequently end up connecting to a variety of different screens.  These are often TVs that just don’t correctly report their capabilities in the EDID (which is the way a monitor tells a computer its name, the resolutions it supports, etc).</p>
-<p>To fix this, you can sometimes supply an EDID file to the kernel at boot, or edit the xorg configuration, or just use xrandr on a running X server.</p>
-<p>To create a new mode, and assign it to a particular output use this:</p>
-<pre><code>xrandr --newmode &quot;1920x1080 60Hz&quot; 148.500MHz 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
-xrandr --addmode DP-1 &quot;1920x1080 60Hz&quot;
-</code></pre>
-
-<p>You can get the output names by running xrandr with no arguments.  To get modelines, use the <code>gtf</code> or <code>cvt</code> programs.  The new mode will now be available in your favourite monitor-configuring tool, be that xrandr or your DE’s settings program.</p>
-<p>I run this in .xinitrc before starting xfce4.</p>
-<h2>Getting xfce4’s restart and shutdown buttons to work</h2>
-<p>This one turned out to be easy.  You simply run <code>startxfce4</code> with the <code>--with-ck-launch</code> option.  I had tried this previously with no result, probably because some required package wasn’t installed.  I assume this was ConsoleKit, or maybe PolicyKit, and it would have been brought in as a dependency for something else.</p>
-<p>For some reason, there are no suspend or hibernate buttons.  I don’t know if they’re compiled out in Void, or not being shown because those functions aren’t available.  I strongly suspect, due to what I’ve read, that these two rely on systemd to work.</p>
-<h2>Fixing sound</h2>
-<p>Intel HDA sound is always a pest.  My sound used to work in Arch, but that may have been due to some tweaking that got blown away when the root partition was reformatted.  My problem was that sound would go to the headphones when they weren’t plugged in but when they were plugged in, sound would go to the speakers.</p>
-<p>I finally stumbled upon the awesome tool <code>hdajackretask</code>, which is a part of <code>alsa-tools</code>.  The snd-hda-intel module can be reconfigured on the fly by writing values to the correct section of <code>/sys</code>.  You just fiddle around in hdajackrestask until things seem to work right, then grab the shell script it creates from <code>/tmp/hda-jack-retask-??????/script.sh</code>.</p>
-<p>I tweaked the script to stop it trying to write logging information to /tmp, and called it from <code>/etc/rc.local</code> in order to apply the sound changes at boot &ndash; oh the joy of having rc.local again!</p>
-<h2>Automounting of USB drives</h2>
-<p>I’ve been using devmon and udevil for years.  With systemd there’s some bodgy-looking method for running devmon when a user logs in.  Without systemd you just put it in your .bashrc or equivalent shell startup script.  I’m using fish, so what I’ve ended up with is:</p>
-<pre><code>pidof -x devmon &gt; /dev/null 2&gt;/dev/null
-if test $status -ne 0
-    echo &quot;Starting devmon&quot;
-    devmon -g &amp;
-end
-</code></pre>
-
-<p>This typically starts devmon when I log in, and logging out should kill it.</p>
-<p class="blogdate">Posted Tuesday, January 22, 2019</p>
 <p><a href="/blog/contents.html">Blog contents</a></p>
     </div>
     <div id="foot">
@@ -158,7 +130,7 @@ function search() {
 <p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Friday, July 10, 2020 at 10:33:25</em></p>
+<p><em>Last built: Wednesday, June 23, 2021 at 10:12:02</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>

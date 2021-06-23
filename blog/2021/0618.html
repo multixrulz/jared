@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Find and replace in geany</title>
+<title>Replacing a disk in a BTRFS RAID1 configuration</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 <link rel="stylesheet" type="text/css" href="/css/gold.css">
 <link rel="shortcut icon" href="/favicon.png">
-<meta name="description" content="Getting it to work with regexes.">
+<meta name="description" content="How to replace a failing drive in a BTRFS RAID1 (aka mirroring) setup.">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
 <meta name="copyright" content="&copy; 2021 Jared Henley">
@@ -39,22 +39,34 @@
     </div>
     <div id="content">
 
-<h1>Find and replace in geany</h1>
-<p>The other day I wanted to do a find-and-replace in <a href="http://www.geany.org/">geany</a> using a regex in the find.  I wanted to turn something like this</p>
-<pre><code>Field name: value
-</code></pre>
-<p>into</p>
-<pre><code>Field name: value plus some more
-</code></pre>
-<p>Since geany supports regex searching, I decided it was time to find out how to do regex replacements too.  The way it works, is that you put parentheses around each match that you want to be able to use in the replacement string, and then reference these replacements using backslash-number.  So the find string becomes</p>
-<pre><code>^Field name: (.*)
-</code></pre>
-<p>and the replacement string becomes</p>
-<pre><code>Field name: \1 plus some more
-</code></pre>
-<p>That was too easy.</p>
+<h1>Replacing a disk in a BTRFS RAID1 configuration</h1>
+<p>When your hard drive starts making the clicking sound of death, it&rsquo;s time to act.</p>
+<ol>
+<li>Get a new hard drive.</li>
+<li>Run a BTRFS scrub, using <code>btrfs scrub status -d /home</code> to show which drive had the errors (and also to ensure that any errors were corrected on the good disk)</li>
+<li>Work out which hard drive is at fault.  I had the following information:<ul>
+<li><code>/dev/mapper/home2</code> from BTRFS - this one had errors during a scrub, too.</li>
+<li><code>ata2</code> from the kernel message log - the ATA interface kept getting reset.</li>
+<li><code>/dev/sdb</code> from GSmartControl - this was the drive with reallocated sectors.</li>
+<li>Verify using <code>blkid</code> that the UUID for /dev/sdb was the same as the UUID for home2 in <code>/etc/crypttab</code>.</li>
+</ul>
+</li>
+<li>Locate the physical drive.  I was able to do this by following SATA cables to the various drives in the system and figuring out the ATA IDs for each SATA port.</li>
+<li>Put the new drive into the DVD drive position.  (This is probably easier than having to replace a physically removed drive).</li>
+<li>Partition the new drive.  Ensure you use the same tools, or at least end up with <em>exactly</em> the same partition table.  That bit me.</li>
+<li><a href="/blog/2016/0427.html">Set up crypto</a> on the new drive</li>
+<li>Open the encrypted partition with a different name (e.g. home3).  You can end up using the original name, but not while the original drive is mounted.</li>
+<li>Add the new drive to the BTRFS RAID array by replacing the old one.<ul>
+<li>Execute <code>btrfs filesystem show /home</code> and find the devid.</li>
+<li><code>btrfs replace start &lt;devid&gt; /dev/mapper/home3 /home</code></li>
+<li><code>btrfs replace status /home</code> and watch it progress.</li>
+</ul>
+</li>
+<li>While that’s going, write a blog entry and also update <code>/etc/crypttab</code> and <code>/etc/fstab</code> to use the new drive.  Probably should use the <code>nofail</code> mount option in case you make a mistake, so the system still boots into a nice environment.</li>
+<li>When it&rsquo;s all done, remove the old drive.</li>
+</ol>
 
-<p class="blogdate">Posted Monday, February 18, 2019</p>
+<p class="blogdate">Posted Friday, June 18, 2021</p>
 
 <p><a href="/blog/contents.html">Blog contents</a></p>
 
@@ -79,7 +91,7 @@ function search() {
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
 <p><em>Last built: Wednesday, June 23, 2021 at 10:12:03</em></p>
-<p><em>Last modified: Thursday, July  2, 2020 at 15:05:34</em></p>
+<p><em>Last modified: Friday, June 18, 2021 at 14:06:16</em></p>
 </div>
 </div>
 </body>

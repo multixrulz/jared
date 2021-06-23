@@ -10,7 +10,7 @@
 <meta name="description" content="bufe makes it easy to run backups">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -54,7 +54,6 @@
 <h2>Usage</h2>
 <pre><code>Usage: bufe {-l | backup_name}
 </code></pre>
-
 <p><code>bufe -l</code> lists all the backups defined in ~/.config/bufe/bufe.conf.</p>
 <p><code>bufe backup_name</code> runs the named backup defined in ~/.config/bufe/bufe.conf.</p>
 <pre><code>[rsync_backup]
@@ -63,7 +62,6 @@ source = /path/to/original/
 destination = /path/to/mirror
 preserve = True
 </code></pre>
-
 <p>A mirror backup runs rsync to mirror the source directory to the destination directory.  Normal rsync rules about trailing slashes apply.  Preserve passes the ’a’ option to rsync.  If preserve is false, options ’rltD’ are passed to rsync instead.</p>
 <pre><code>[rdup_backup]
 type = incremental
@@ -72,7 +70,6 @@ destination = /path/to/backup
 tmp = /tmpdir
 splitsize = 600M
 </code></pre>
-
 <p>An incremental backup uses rdup to back up only modified files (based on ctime).  The files are split using dirsplit into equal-sized groups if possible, which are then tarred.</p>
 <h2>Give back</h2>
 <p>If you find this program useful, <a href="/software/giveback.html">give something back</a>.</p>
@@ -93,10 +90,10 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:12</em></p>
+<p><em>Last built: Wednesday, June 23, 2021 at 10:12:05</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>

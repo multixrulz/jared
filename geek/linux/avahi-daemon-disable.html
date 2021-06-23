@@ -10,7 +10,7 @@
 <meta name="description" content="How to disable a daemon that doesn't want to be disabled">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2019 Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -44,18 +44,15 @@
 <pre><code># systemctl stop avahi-daemon
 # systemctl disable avahi-daemon
 </code></pre>
-
 <p>But at next boot, avahi-daemon was running again!  What the &hellip;?  There was some kind of message about socket activation, so I tried</p>
 <pre><code># systemctl disable avahi-daemon.socket
 </code></pre>
-
 <p>But still avahi-daemon starts with the system.</p>
 <p>In frustration, I tried removing the avahi package from my system, but unfortunately it’s a dependency for stuff like scanning and printing &ndash; they need it to discover services on the network, and only use the client library.</p>
 <p>At this point I began to find agreement with the Lennart Poettering haters (which seems a reasonable direction to vent, since Poettering is responsible for both avahi and systemd, one of which seems to be at fault).  Then, a flash of inspiration.  If I can’t prevent avahi-daemon from getting started, I can at least prevent it from doing anything.  This turns out to be easier than expected!  In /etc/avahi/avahi-daemon.conf, make these two settings thus:</p>
 <pre><code>use-ipv4=no
 use-ipv6=no
 </code></pre>
-
 <p>Voila!  Now avahi-daemon fails, as it has no networking enabled.  There are other possibilities in that file too, such as <code>deny-interfaces</code> and <code>disable-publishing</code>.</p>
 <p>So in the short term, my problem is fixed!  But in the long term I’m a little less optimistic about this tendency for the computer to do what it wants, regardless of what it’s told to do.</p>
     </div>
@@ -75,10 +72,10 @@ function search() {
 </script>
 </form>
 
-<p><strong>This website is Copyright &copy; 2005-2019 Jared Henley</strong></p>
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, October 29, 2019 at 19:40:09</em></p>
+<p><em>Last built: Wednesday, June 23, 2021 at 10:12:04</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>
