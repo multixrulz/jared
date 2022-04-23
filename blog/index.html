@@ -38,6 +38,31 @@
 </ul>
     </div>
     <div id="content">
+<h1>Self-signed certificate in lighttpd</h1>
+<p>Is this what you want to do?  Understand the implications of self-signed certificates, and passwordless keys too probably.</p>
+<h2>Create the certificate</h2>
+<p>Create a key:</p>
+<p><code>openssl genrsa -des3 -out testing.key 2048</code></p>
+<p>This creates a key with a password.  Lighttpd will ask you for the password when it starts - this is usually not what you want.</p>
+<p>Create a key without a password:</p>
+<p><code>openssl genrsa -des3 -out testing.key 2048</code></p>
+<p>Create a certificate signing request:</p>
+<p><code>openssl req -new -key testing.key -out testing.csr</code></p>
+<p>Create a certificate:</p>
+<p><code>openssl x509 -req -days 365 -in testing.csr -signkey testing.key -out testing.crt</code></p>
+<p>Create a .pem file</p>
+<p><code>cat testing.key testing.crt &gt; certificate.pem</code></p>
+<h2>Set up lighttpd</h2>
+<p>Copy the .pem and .crt files over to <code>/etc/lighttpd/</code>.</p>
+<p>These are the essential directives - implement them as you wish.</p>
+<pre><code>$SERVER[&quot;socket&quot;] == &quot;:443&quot; {
+   ssl.engine = &quot;enable&quot;
+   ssl.pemfile = &quot;/etc/lighttpd/certificate.pem&quot;
+   ssl.ca-file = &quot;/etc/lighttpd/testing.crt&quot;
+   server.name = &quot;something&quot;
+}
+</code></pre>
+<p class="blogdate">Posted Thursday, August 26, 2021</p>
 <h1>Replacing a disk in a BTRFS RAID1 configuration</h1>
 <p>When your hard drive starts making the clicking sound of death, it&rsquo;s time to act.</p>
 <ol>
@@ -94,21 +119,6 @@ dhcp=dhcpcd
 <p>If you don’t want to start the screen capture in the top-left, just use something like <code>-i :0.0+100,200</code> to specify where to start and the resolution to capture.</p>
 <p>The <a href="https://trac.ffmpeg.org/wiki/Capture/Desktop">ffmpeg website</a> has more info.</p>
 <p class="blogdate">Posted Tuesday, February 19, 2019</p>
-<h1>Find and replace in geany</h1>
-<p>The other day I wanted to do a find-and-replace in <a href="http://www.geany.org/">geany</a> using a regex in the find.  I wanted to turn something like this</p>
-<pre><code>Field name: value
-</code></pre>
-<p>into</p>
-<pre><code>Field name: value plus some more
-</code></pre>
-<p>Since geany supports regex searching, I decided it was time to find out how to do regex replacements too.  The way it works, is that you put parentheses around each match that you want to be able to use in the replacement string, and then reference these replacements using backslash-number.  So the find string becomes</p>
-<pre><code>^Field name: (.*)
-</code></pre>
-<p>and the replacement string becomes</p>
-<pre><code>Field name: \1 plus some more
-</code></pre>
-<p>That was too easy.</p>
-<p class="blogdate">Posted Monday, February 18, 2019</p>
 <p><a href="/blog/contents.html">Blog contents</a></p>
     </div>
     <div id="foot">
@@ -130,7 +140,7 @@ function search() {
 <p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Wednesday, June 23, 2021 at 10:12:02</em></p>
+<p><em>Last built: Thursday, August 26, 2021 at 20:09:50</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>

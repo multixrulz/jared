@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Self-signed certificate in lighttpd</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<meta name="description" content="How to set up a self-signed certificate in lighttpd - when you're sure you don't need a CA-verified one.">
+<meta name="generator" content="0cms">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2021 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>My blog</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/blog/">My blog</a></li>
+</ul>
+    </div>
+    <div id="content">
+
+<h1>Self-signed certificate in lighttpd</h1>
+<p>Is this what you want to do?  Understand the implications of self-signed certificates, and passwordless keys too probably.</p>
+<h2>Create the certificate</h2>
+<p>Create a key:</p>
+<p><code>openssl genrsa -des3 -out testing.key 2048</code></p>
+<p>This creates a key with a password.  Lighttpd will ask you for the password when it starts - this is usually not what you want.</p>
+<p>Create a key without a password:</p>
+<p><code>openssl genrsa -des3 -out testing.key 2048</code></p>
+<p>Create a certificate signing request:</p>
+<p><code>openssl req -new -key testing.key -out testing.csr</code></p>
+<p>Create a certificate:</p>
+<p><code>openssl x509 -req -days 365 -in testing.csr -signkey testing.key -out testing.crt</code></p>
+<p>Create a .pem file</p>
+<p><code>cat testing.key testing.crt &gt; certificate.pem</code></p>
+<h2>Set up lighttpd</h2>
+<p>Copy the .pem and .crt files over to <code>/etc/lighttpd/</code>.</p>
+<p>These are the essential directives - implement them as you wish.</p>
+<pre><code>$SERVER[&quot;socket&quot;] == &quot;:443&quot; {
+   ssl.engine = &quot;enable&quot;
+   ssl.pemfile = &quot;/etc/lighttpd/certificate.pem&quot;
+   ssl.ca-file = &quot;/etc/lighttpd/testing.crt&quot;
+   server.name = &quot;something&quot;
+}
+</code></pre>
+
+<p class="blogdate">Posted Thursday, August 26, 2021</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
+    </div>
+    <div id="foot">
+
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.  DNS by <a href="http://freedns.afraid.org/">afraid.org</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Thursday, August 26, 2021 at 20:09:50</em></p>
+<p><em>Last modified: Thursday, August 26, 2021 at 20:09:48</em></p>
+</div>
+</div>
+</body>
+</html>
