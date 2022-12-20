@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Jared's Blog</title>
 <id>http://jared.henley.id.au/blog/atom.atom</id>
-<updated>2021-08-26T20:09:50.533363</updated>
+<updated>2022-12-20T13:18:29.571889</updated>
 <entry>
 <link href="http://jared.henley.id.au/blog/2021/0826.html" />
 <title>Self-signed certificate in lighttpd</title>

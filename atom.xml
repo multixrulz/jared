@@ -2,185 +2,185 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Changes to jared.henley.id.au</title>
 <id>http://jared.henley.id.au/atom.xml</id>
-<updated>2022-04-23T15:23:22.738553</updated>
+<updated>2022-12-20T13:18:29.472703</updated>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/tags/css/tractags.css" />
-<title>/recipes/chrome/tags/css/tractags.css</title>
-<summary>"/recipes/chrome/tags/css/tractags.css" changed on 2022-04-23T15:07:33.033313</summary>
-<updated>2022-04-23T15:07:33.033313</updated>
+<link href="http://jared.henley.id.au/0cms-template" />
+<title>/0cms-template</title>
+<summary>"/0cms-template" changed on 2022-12-20T13:18:22.787055</summary>
+<updated>2022-12-20T13:18:22.787055</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/site/trac-logo.svg" />
-<title>/recipes/chrome/site/trac-logo.svg</title>
-<summary>"/recipes/chrome/site/trac-logo.svg" changed on 2022-04-23T15:07:33.029979</summary>
-<updated>2022-04-23T15:07:33.029979</updated>
+<link href="http://jared.henley.id.au/blog/2021/0826.html" />
+<title>/blog/2021/0826.html</title>
+<summary>"/blog/2021/0826.html" changed on 2021-08-26T20:09:48.033025</summary>
+<updated>2021-08-26T20:09:48.033025</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_18_ffddcc_40x40.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_18_ffddcc_40x40.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_18_ffddcc_40x40.png" changed on 2022-04-23T15:07:33.023312</summary>
-<updated>2022-04-23T15:07:33.023312</updated>
+<link href="http://jared.henley.id.au/blog/2021/0618.html" />
+<title>/blog/2021/0618.html</title>
+<summary>"/blog/2021/0618.html" changed on 2021-06-18T14:06:16.237199</summary>
+<updated>2021-06-18T14:06:16.237199</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png" changed on 2022-04-23T15:07:33.019979</summary>
-<updated>2022-04-23T15:07:33.019979</updated>
+<link href="http://jared.henley.id.au/blog/2019/0218.html" />
+<title>/blog/2019/0218.html</title>
+<summary>"/blog/2019/0218.html" changed on 2020-07-02T15:05:34.297140</summary>
+<updated>2020-07-02T15:05:34.297140</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_00_ffffff_40x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_00_ffffff_40x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_00_ffffff_40x100.png" changed on 2022-04-23T15:07:33.013312</summary>
-<updated>2022-04-23T15:07:33.013312</updated>
+<link href="http://jared.henley.id.au/blog/atom.atom" />
+<title>/blog/atom.atom</title>
+<summary>"/blog/atom.atom" changed on 2020-04-04T13:33:29.721097</summary>
+<updated>2020-04-04T13:33:29.721097</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffdd_40x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffdd_40x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffdd_40x100.png" changed on 2022-04-23T15:07:33.009979</summary>
-<updated>2022-04-23T15:07:33.009979</updated>
+<link href="http://jared.henley.id.au/atom.xml" />
+<title>/atom.xml</title>
+<summary>"/atom.xml" changed on 2020-01-22T12:56:19.058104</summary>
+<updated>2020-01-22T12:56:19.058104</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffff_40x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffff_40x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_0_ffffff_40x100.png" changed on 2022-04-23T15:07:33.006645</summary>
-<updated>2022-04-23T15:07:33.006645</updated>
+<link href="http://jared.henley.id.au/blog/2020/0107.html" />
+<title>/blog/2020/0107.html</title>
+<summary>"/blog/2020/0107.html" changed on 2020-01-07T16:30:54.236262</summary>
+<updated>2020-01-07T16:30:54.236262</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_10_000000_40x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_10_000000_40x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_flat_10_000000_40x100.png" changed on 2022-04-23T15:07:32.999979</summary>
-<updated>2022-04-23T15:07:32.999979</updated>
+<link href="http://jared.henley.id.au/geek/linux/index.html" />
+<title>/geek/linux/index.html</title>
+<summary>"/geek/linux/index.html" changed on 2020-01-07T16:24:10.886708</summary>
+<updated>2020-01-07T16:24:10.886708</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_30_303030_1x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_30_303030_1x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_30_303030_1x100.png" changed on 2022-04-23T15:07:32.996645</summary>
-<updated>2022-04-23T15:07:32.996645</updated>
+<link href="http://jared.henley.id.au/blog/contents.html" />
+<title>/blog/contents.html</title>
+<summary>"/blog/contents.html" changed on 2019-11-29T20:51:04.476825</summary>
+<updated>2019-11-29T20:51:04.476825</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_75_c0f0c0_1x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_75_c0f0c0_1x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_75_c0f0c0_1x100.png" changed on 2022-04-23T15:07:32.989979</summary>
-<updated>2022-04-23T15:07:32.989979</updated>
+<link href="http://jared.henley.id.au/blog/2019/1124.html" />
+<title>/blog/2019/1124.html</title>
+<summary>"/blog/2019/1124.html" changed on 2019-11-25T16:05:13.233484</summary>
+<updated>2019-11-25T16:05:13.233484</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_80_ffffdd_1x100.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_80_ffffdd_1x100.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-bg_highlight-soft_80_ffffdd_1x100.png" changed on 2022-04-23T15:07:32.986645</summary>
-<updated>2022-04-23T15:07:32.986645</updated>
+<link href="http://jared.henley.id.au/geek/index.html" />
+<title>/geek/index.html</title>
+<summary>"/geek/index.html" changed on 2019-11-22T17:48:50.290072</summary>
+<updated>2019-11-22T17:48:50.290072</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_222222_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_222222_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_222222_256x240.png" changed on 2022-04-23T15:07:32.983312</summary>
-<updated>2022-04-23T15:07:32.983312</updated>
+<link href="http://jared.henley.id.au/software/fontfinder/index.html" />
+<title>/software/fontfinder/index.html</title>
+<summary>"/software/fontfinder/index.html" changed on 2019-10-29T20:28:29.754915</summary>
+<updated>2019-10-29T20:28:29.754915</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_4b954f_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_4b954f_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_4b954f_256x240.png" changed on 2022-04-23T15:07:32.969978</summary>
-<updated>2022-04-23T15:07:32.969978</updated>
+<link href="http://jared.henley.id.au/software/photo-shrink/index.html" />
+<title>/software/photo-shrink/index.html</title>
+<summary>"/software/photo-shrink/index.html" changed on 2019-10-29T19:39:37.522477</summary>
+<updated>2019-10-29T19:39:37.522477</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_505050_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_505050_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_505050_256x240.png" changed on 2022-04-23T15:07:32.959978</summary>
-<updated>2022-04-23T15:07:32.959978</updated>
+<link href="http://jared.henley.id.au/css/layout.css" />
+<title>/css/layout.css</title>
+<summary>"/css/layout.css" changed on 2019-10-19T06:49:00.438721</summary>
+<updated>2019-10-19T06:49:00.438721</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_707070_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_707070_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_707070_256x240.png" changed on 2022-04-23T15:07:32.956645</summary>
-<updated>2022-04-23T15:07:32.956645</updated>
+<link href="http://jared.henley.id.au/blog/2019/0122.html" />
+<title>/blog/2019/0122.html</title>
+<summary>"/blog/2019/0122.html" changed on 2019-10-02T16:06:43.397308</summary>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_9b081d_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_9b081d_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_9b081d_256x240.png" changed on 2022-04-23T15:07:32.956645</summary>
-<updated>2022-04-23T15:07:32.956645</updated>
+<link href="http://jared.henley.id.au/blog/2014/1019.html" />
+<title>/blog/2014/1019.html</title>
+<summary>"/blog/2014/1019.html" changed on 2019-10-02T16:06:43.397308</summary>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_b00000_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_b00000_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_b00000_256x240.png" changed on 2022-04-23T15:07:32.953311</summary>
-<updated>2022-04-23T15:07:32.953311</updated>
+<link href="http://jared.henley.id.au/blog/2014/1026.html" />
+<title>/blog/2014/1026.html</title>
+<summary>"/blog/2014/1026.html" changed on 2019-10-02T16:06:43.397308</summary>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/images/ui-icons_d7d7d7_256x240.png" />
-<title>/recipes/chrome/common/css/jquery-ui/images/ui-icons_d7d7d7_256x240.png</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/images/ui-icons_d7d7d7_256x240.png" changed on 2022-04-23T15:07:32.949978</summary>
-<updated>2022-04-23T15:07:32.949978</updated>
+<link href="http://jared.henley.id.au/blog/2011/0203.html" />
+<title>/blog/2011/0203.html</title>
+<summary>"/blog/2011/0203.html" changed on 2019-10-02T16:06:43.397308</summary>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui/jquery-ui.css" />
-<title>/recipes/chrome/common/css/jquery-ui/jquery-ui.css</title>
-<summary>"/recipes/chrome/common/css/jquery-ui/jquery-ui.css" changed on 2022-04-23T15:07:32.949978</summary>
-<updated>2022-04-23T15:07:32.949978</updated>
+<link href="http://jared.henley.id.au/blog/2010/0601.html" />
+<title>/blog/2010/0601.html</title>
+<summary>"/blog/2010/0601.html" changed on 2019-10-02T16:06:43.397308</summary>
+<updated>2019-10-02T16:06:43.397308</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/jquery-ui-addons.css" />
-<title>/recipes/chrome/common/css/jquery-ui-addons.css</title>
-<summary>"/recipes/chrome/common/css/jquery-ui-addons.css" changed on 2022-04-23T15:07:32.946645</summary>
-<updated>2022-04-23T15:07:32.946645</updated>
+<link href="http://jared.henley.id.au/blog/2019/0219.html" />
+<title>/blog/2019/0219.html</title>
+<summary>"/blog/2019/0219.html" changed on 2019-10-02T16:06:43.393975</summary>
+<updated>2019-10-02T16:06:43.393975</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/search.css" />
-<title>/recipes/chrome/common/css/search.css</title>
-<summary>"/recipes/chrome/common/css/search.css" changed on 2022-04-23T15:07:32.946645</summary>
-<updated>2022-04-23T15:07:32.946645</updated>
+<link href="http://jared.henley.id.au/software/index.html" />
+<title>/software/index.html</title>
+<summary>"/software/index.html" changed on 2019-10-02T16:06:43.363974</summary>
+<updated>2019-10-02T16:06:43.363974</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/code.css" />
-<title>/recipes/chrome/common/css/code.css</title>
-<summary>"/recipes/chrome/common/css/code.css" changed on 2022-04-23T15:07:32.943311</summary>
-<updated>2022-04-23T15:07:32.943311</updated>
+<link href="http://jared.henley.id.au/blog/2014/20141026.jpg" />
+<title>/blog/2014/20141026.jpg</title>
+<summary>"/blog/2014/20141026.jpg" changed on 2019-10-02T16:06:30.527166</summary>
+<updated>2019-10-02T16:06:30.527166</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/prefs.css" />
-<title>/recipes/chrome/common/css/prefs.css</title>
-<summary>"/recipes/chrome/common/css/prefs.css" changed on 2022-04-23T15:07:32.939978</summary>
-<updated>2022-04-23T15:07:32.939978</updated>
+<link href="http://jared.henley.id.au/blog/2011/outloo.jpg" />
+<title>/blog/2011/outloo.jpg</title>
+<summary>"/blog/2011/outloo.jpg" changed on 2019-10-02T16:06:30.527166</summary>
+<updated>2019-10-02T16:06:30.527166</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/trac.css" />
-<title>/recipes/chrome/common/css/trac.css</title>
-<summary>"/recipes/chrome/common/css/trac.css" changed on 2022-04-23T15:07:32.939978</summary>
-<updated>2022-04-23T15:07:32.939978</updated>
+<link href="http://jared.henley.id.au/img/index.html" />
+<title>/img/index.html</title>
+<summary>"/img/index.html" changed on 2019-09-29T15:49:23.290807</summary>
+<updated>2019-09-29T15:49:23.290807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/css/wiki.css" />
-<title>/recipes/chrome/common/css/wiki.css</title>
-<summary>"/recipes/chrome/common/css/wiki.css" changed on 2022-04-23T15:07:32.936644</summary>
-<updated>2022-04-23T15:07:32.936644</updated>
+<link href="http://jared.henley.id.au/font/index.html" />
+<title>/font/index.html</title>
+<summary>"/font/index.html" changed on 2019-09-29T15:49:23.290807</summary>
+<updated>2019-09-29T15:49:23.290807</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/js/babel.js" />
-<title>/recipes/chrome/common/js/babel.js</title>
-<summary>"/recipes/chrome/common/js/babel.js" changed on 2022-04-23T15:07:32.936644</summary>
-<updated>2022-04-23T15:07:32.936644</updated>
+<link href="http://jared.henley.id.au/stuff/index.html" />
+<title>/stuff/index.html</title>
+<summary>"/stuff/index.html" changed on 2019-09-29T15:49:23.274141</summary>
+<updated>2019-09-29T15:49:23.274141</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/js/folding.js" />
-<title>/recipes/chrome/common/js/folding.js</title>
-<summary>"/recipes/chrome/common/js/folding.js" changed on 2022-04-23T15:07:32.933311</summary>
-<updated>2022-04-23T15:07:32.933311</updated>
+<link href="http://jared.henley.id.au/stuff/0cms-template" />
+<title>/stuff/0cms-template</title>
+<summary>"/stuff/0cms-template" changed on 2019-09-29T15:49:23.274141</summary>
+<updated>2019-09-29T15:49:23.274141</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/js/jquery-ui-addons.js" />
-<title>/recipes/chrome/common/js/jquery-ui-addons.js</title>
-<summary>"/recipes/chrome/common/js/jquery-ui-addons.js" changed on 2022-04-23T15:07:32.933311</summary>
-<updated>2022-04-23T15:07:32.933311</updated>
+<link href="http://jared.henley.id.au/software/wildproxy/index.html" />
+<title>/software/wildproxy/index.html</title>
+<summary>"/software/wildproxy/index.html" changed on 2019-09-29T15:49:23.267474</summary>
+<updated>2019-09-29T15:49:23.267474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/js/jquery-ui-i18n.js" />
-<title>/recipes/chrome/common/js/jquery-ui-i18n.js</title>
-<summary>"/recipes/chrome/common/js/jquery-ui-i18n.js" changed on 2022-04-23T15:07:32.929978</summary>
-<updated>2022-04-23T15:07:32.929978</updated>
+<link href="http://jared.henley.id.au/software/wildproxy/0cms-template" />
+<title>/software/wildproxy/0cms-template</title>
+<summary>"/software/wildproxy/0cms-template" changed on 2019-09-29T15:49:23.267474</summary>
+<updated>2019-09-29T15:49:23.267474</updated>
 </entry>
 <entry>
-<link href="http://jared.henley.id.au/recipes/chrome/common/js/jquery-ui.js" />
-<title>/recipes/chrome/common/js/jquery-ui.js</title>
-<summary>"/recipes/chrome/common/js/jquery-ui.js" changed on 2022-04-23T15:07:32.929978</summary>
-<updated>2022-04-23T15:07:32.929978</updated>
+<link href="http://jared.henley.id.au/software/udevmnt/index.html" />
+<title>/software/udevmnt/index.html</title>
+<summary>"/software/udevmnt/index.html" changed on 2019-09-29T15:49:23.267474</summary>
+<updated>2019-09-29T15:49:23.267474</updated>
 </entry>
 </feed>
