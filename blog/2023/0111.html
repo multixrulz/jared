@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Setting up a GitHub repo for an existing local git repo</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/gold.css">
+<link rel="shortcut icon" href="/favicon.png">
+<meta name="description" content="For when you have something tracked in git locally, and want to get it into GitHub with minimum stuffing around.">
+<meta name="generator" content="0cms">
+<meta name="author" content="Jared Henley">
+<meta name="copyright" content="&copy; 2023 Jared Henley">
+<meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
+</head>
+<body>
+<div id="width">
+    <div id="head">
+        <div id="hd2">
+            <img class="stretch" src="/img/headbg_gold.png" alt="background">
+            <p>My blog</p>
+            <img id="topimg" src="/img/sunflower.png" alt="nice pic">
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Jared Henley's Website">Home</a></li>
+            <li><a href="/blog" title="Jared Henley's blog">Blog</a></li>
+            <li><a href="/geek/" title="Geeky Stuff">Geek</a></li>
+            <li><a href="/stuff/" title="Other Stuff">Stuff</a></li>
+            <li><a href="/software/" title="Software">Software</a></li>
+        </ul>
+    </div>
+    <div id="trail">
+<ul>
+<li><a href="/">Jared Henley</a></li>
+<li><a href="/blog/">My blog</a></li>
+</ul>
+    </div>
+    <div id="content">
+
+<h1>Setting up a GitHub repo for an existing local git repo</h1>
+<p>Let’s say you have a repo at <code>~/my-git-repo</code> and you want to create a new repo on GitHub to push it to. Here’s how you do it.</p>
+<ol>
+<li>Create a repo on GitHub – let’s call it <code>my-new-git-repo</code>.  Don’t let GitHub create anything for it.</li>
+<li>On your local machine, add a “remote” to the repo.
+  <code>git remote add origin https://github.com/myuser/my-new-git-repo.git</code></li>
+<li>Push, as in <code>git push</code></li>
+</ol>
+<p>That was easy!  I think I got myself into trouble before by letting GitHub create a README and so on.</p>
+
+<p class="blogdate">Posted Wednesday, January 11, 2023</p>
+
+<p><a href="/blog/contents.html">Blog contents</a></p>
+
+    </div>
+    <div id="foot">
+
+<form id="searchform" action="https://duckduckgo.com/" method="get">
+<input id="searchform_q" name="_q" type="text" value="" />
+<input id="searchformq" name="q" type="hidden" value="" />
+<input type="button" value="Search" onclick="search()" />
+<script>
+function search() {
+    document.getElementById("searchformq").value =
+        document.getElementById("searchform_q").value
+        + " site:jared.henley.id.au"
+    document.getElementById("searchform").submit()
+}
+</script>
+</form>
+
+<p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
+<p>Built with <a href="http://0cms.henley.id.au">0cms</a>.</p>
+<p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
+<p><em>Last built: Wednesday, January 11, 2023 at 14:59:33</em></p>
+<p><em>Last modified: Wednesday, January 11, 2023 at 14:47:54</em></p>
+</div>
+</div>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="generator" content="0cms">
 <meta name="author" content="Jared Henley">
-<meta name="copyright" content="&copy; 2022 Jared Henley">
+<meta name="copyright" content="&copy; 2023 Jared Henley">
 <meta name="verify-v1" content="sOYDFF7yuYP5c4zAAejxDlHXwprCPvTXQ6CoRodicuQ=">
 </head>
 <body>
@@ -38,6 +38,16 @@
 </ul>
     </div>
     <div id="content">
+<h1>Setting up a GitHub repo for an existing local git repo</h1>
+<p>Let’s say you have a repo at <code>~/my-git-repo</code> and you want to create a new repo on GitHub to push it to. Here’s how you do it.</p>
+<ol>
+<li>Create a repo on GitHub – let’s call it <code>my-new-git-repo</code>.  Don’t let GitHub create anything for it.</li>
+<li>On your local machine, add a “remote” to the repo.
+  <code>git remote add origin https://github.com/myuser/my-new-git-repo.git</code></li>
+<li>Push, as in <code>git push</code></li>
+</ol>
+<p>That was easy!  I think I got myself into trouble before by letting GitHub create a README and so on.</p>
+<p class="blogdate">Posted Wednesday, January 11, 2023</p>
 <h1>Self-signed certificate in lighttpd</h1>
 <p>Is this what you want to do?  Understand the implications of self-signed certificates, and passwordless keys too probably.</p>
 <h2>Create the certificate</h2>
@@ -110,15 +120,6 @@ dhcp=dhcpcd
 <h1>Raspberry Pi video output</h1>
 <p>I’m in the process of setting up a Raspberry Pi as a media PC.  The GUI configuration panel doesn’t contain a setting for the pixel format — I want to use the whole 8 bits and get proper blacks and whites — and /boot/config.txt wasn’t helping either, as Raspbian Noobs hasn’t put all the possible variables in there.  It’s documented <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md">here</a>.  The variable in question is <code>hdmi_pixel_encoding</code>.</p>
 <p class="blogdate">Posted Sunday, November 24, 2019</p>
-<h1>Record my desktop with ffmpeg</h1>
-<p>It seems that desktop recording is quite the pest.  Not that I’ve tried much, but I also haven’t really found a &ldquo;go-to&rdquo; piece of software for X11 that just does it.  So the last time I wanted to record my screen, I decided to have a go with just plain command-line tools.</p>
-<p>It turns out that this is also ridiculously easy.</p>
-<pre><code>ffmpeg -f x11grab -s 500x300 -r 25 -i :0.0 foo.mp4
-</code></pre>
-<p>The -s option tells ffmpeg the pixel size of the region you want to grab; -r is the frame rate, -i is your X screen, and the video is written to foo.mp4.</p>
-<p>If you don’t want to start the screen capture in the top-left, just use something like <code>-i :0.0+100,200</code> to specify where to start and the resolution to capture.</p>
-<p>The <a href="https://trac.ffmpeg.org/wiki/Capture/Desktop">ffmpeg website</a> has more info.</p>
-<p class="blogdate">Posted Tuesday, February 19, 2019</p>
 <p><a href="/blog/contents.html">Blog contents</a></p>
     </div>
     <div id="foot">
@@ -140,7 +141,7 @@ function search() {
 <p><strong>This website is Copyright &copy; 2005-2020 Jared Henley</strong></p>
 <p>Built with <a href="http://0cms.henley.id.au">0cms</a>.</p>
 <p>All content is licenced <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND</a> unless otherwise noted.  Code is licenced under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>. <a href="/credits.html">Credits</a></p>
-<p><em>Last built: Tuesday, December 20, 2022 at 13:18:29</em></p>
+<p><em>Last built: Wednesday, January 11, 2023 at 14:59:33</em></p>
 <p><em>Last modified: Sunday, September 29, 2019 at 15:49:23</em></p>
 </div>
 </div>
